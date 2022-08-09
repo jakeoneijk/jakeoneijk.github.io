@@ -3,6 +3,7 @@ import Body from './Components/Body';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import { PageState } from './Components/PageState';
+import {BrowserView, MobileView} from 'react-device-detect';
 
 
 
@@ -11,9 +12,15 @@ function App() {
   
   return (
     <div className="App">
-      <Header onClickTitle={()=>{setPageState(PageState.HOME)}} onClickCV={()=>{setPageState(PageState.CV)}}/>
-      <Body pageState={pageState}/>
-      <Footer/>
+      <BrowserView>
+        <Header onClickTitle={()=>{setPageState(PageState.HOME)}} onClickCV={()=>{setPageState(PageState.CV)}}/>
+        <Body pageState={pageState}/>
+        <Footer/>
+      </BrowserView>
+      <MobileView>
+        Sorry, this content is not available on mobile yet.
+      </MobileView>
+      
     </div>
   );
 }
