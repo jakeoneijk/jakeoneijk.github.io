@@ -14,11 +14,11 @@ function Header({onClickTitle, onClickCV}: HeaderProps) {
           <ExtraBoldTextSpan font_size="24px">Jaekwon Im </ExtraBoldTextSpan>
           <SemiBoldTextSpan font_size="24px">blog</SemiBoldTextSpan>
         </HeaderItemDiv>
-        <div>
+        <MenuDiv>
           <HeaderItemDiv onClick={onClickCV}>
             <MediumTextSpan font_size="16px">CV</MediumTextSpan>
           </HeaderItemDiv>
-        </div> 
+        </MenuDiv> 
       </HeaderDiv>
     </SizeDiv>
   );
@@ -30,8 +30,13 @@ width: 100%;
 const HeaderDiv = styled.div`
 display: flex;
 flex-direction: row;
-justify-content: space-between;
-margin: 1% 35% 1% 3%;
+margin-top: 1%;
+margin-bottom:1%;
+margin-left: 3%;
+`
+
+const MenuDiv = styled.div`
+margin-left: 900px;
 `
 
 const HeaderItemDiv = styled.div`
