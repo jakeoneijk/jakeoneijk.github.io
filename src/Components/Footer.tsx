@@ -6,7 +6,7 @@ function Footer() {
   return (
     <FooterDiv className="Footer">
       <FooterTextDiv>
-        <RegularTextSpan font_size="15px">I created this web page using React.</RegularTextSpan>
+        <RegularTextSpan font_size="15px"></RegularTextSpan>
       </FooterTextDiv>
     </FooterDiv>
   );
@@ -16,8 +16,7 @@ const FooterDiv = styled.div`
 width: 100%;
 height: 34px;
 text-align: end;
-justify-content: end; 
-background: #CBCBCB;
+justify-content: end;
 `
 
 const FooterTextDiv = styled.div`

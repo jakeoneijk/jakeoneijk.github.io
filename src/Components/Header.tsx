@@ -31,7 +31,7 @@ const HeaderDiv = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-margin: 18px 56px 18px 56px;
+margin: 1% 35% 1% 3%;
 `
 
 const HeaderItemDiv = styled.div`
