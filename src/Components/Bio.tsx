@@ -36,7 +36,7 @@ function Bio({onClickCV}: BioProps){
               <SemiBoldTextSpan font_size="15px"> jakeoneijk@kaist.ac.kr </SemiBoldTextSpan>
           </BioTextDiv>
           <BioTextDiv>
-            -------------------------------
+            -----------------------
           </BioTextDiv>
           <PageMenuDiv>
             <BioTextDiv>
