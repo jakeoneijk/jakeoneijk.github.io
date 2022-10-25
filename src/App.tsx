@@ -18,7 +18,9 @@ function App() {
         <Footer/>
       </BrowserView>
       <MobileView>
-        Sorry, this content is not available on mobile yet.
+        <Header onClickTitle={()=>{setPageState(PageState.HOME)}}/>
+        <Body pageState={pageState} onClickCV={()=>{setPageState(PageState.CV)}}/>
+        <Footer/>
       </MobileView>
       
     </div>
