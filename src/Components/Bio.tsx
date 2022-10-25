@@ -53,7 +53,7 @@ const BioDiv = styled.div`
 display: flex;
 flex-direction: column;
 margin-top: 10px;
-width: 400px;
+width: 300px;
 `
 
 const ProfileImg = styled.img`

@@ -18,6 +18,7 @@ function Home() {
 
 const HomeDiv = styled.div`
 margin-top : 130px;
+margin-left : 130px;
 `
 
 const HomeImg = styled.img`

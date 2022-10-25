@@ -31,7 +31,6 @@ margin: 18px 56px 10px 56px;
 `
 
 const BodyContentDiv = styled.div`
-margin-left : 20px;
 `
 
 export default Body;

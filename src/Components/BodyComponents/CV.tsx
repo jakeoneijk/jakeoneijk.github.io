@@ -13,9 +13,10 @@ const CVDiv = styled.div`
 `
 
 const IframeDiv = styled.iframe`
-width : 900px ;
+width : 850px ;
 height : 80vh ;
-margin-top : 100px;
+margin-top : 90px;
+margin-left : 30px;
 `
 
 
