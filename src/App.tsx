@@ -13,8 +13,8 @@ function App() {
   return (
     <div className="App">
       <BrowserView>
-        <Header onClickTitle={()=>{setPageState(PageState.HOME)}} onClickCV={()=>{setPageState(PageState.CV)}}/>
-        <Body pageState={pageState}/>
+        <Header onClickTitle={()=>{setPageState(PageState.HOME)}}/>
+        <Body pageState={pageState} onClickCV={()=>{setPageState(PageState.CV)}}/>
         <Footer/>
       </BrowserView>
       <MobileView>

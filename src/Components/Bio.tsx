@@ -2,7 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { ExtraBoldTextSpan, RegularTextSpan, SemiBoldTextSpan } from "../StyledComponents/StyledTextComponents";
 
-function Bio() {
+type BioProps = {
+  onClickCV: () => void;
+};
+
+function Bio({onClickCV}: BioProps){
   return (
     <BioDiv className="Bio">
         <ProfileImg src="/Profile.png" alt="profile"/>
@@ -31,7 +35,14 @@ function Bio() {
             <PersonalLinkImg src="/EMail.png" alt="git"/> 
               <SemiBoldTextSpan font_size="15px"> jakeoneijk@kaist.ac.kr </SemiBoldTextSpan>
           </BioTextDiv>
-
+          <BioTextDiv>
+            -------------------------------
+          </BioTextDiv>
+          <PageMenuDiv>
+            <BioTextDiv>
+              <ExtraBoldTextSpan font_size="14px" onClick={onClickCV}> &nbsp; CV </ExtraBoldTextSpan>
+            </BioTextDiv>
+          </PageMenuDiv>
         </PersonalLinkDiv>
         
     </BioDiv>
@@ -64,6 +75,10 @@ const PersonalLinkImg = styled.img`
 height: 17px;
 margin-left: 5px;
 margin-right: 10px;
+`
+
+const PageMenuDiv = styled.div`
+cursor: pointer;
 `
 
 export default Bio;

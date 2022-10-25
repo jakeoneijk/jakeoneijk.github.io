@@ -3,10 +3,9 @@ import styled from "styled-components";
 
 type HeaderProps = {
   onClickTitle: () => void;
-  onClickCV: () => void;
 };
 
-function Header({onClickTitle, onClickCV}: HeaderProps) {
+function Header({onClickTitle}: HeaderProps) {
   return (
     <SizeDiv>
       <HeaderDiv className="Header">
@@ -14,11 +13,6 @@ function Header({onClickTitle, onClickCV}: HeaderProps) {
           <ExtraBoldTextSpan font_size="24px">Jaekwon Im </ExtraBoldTextSpan>
           <SemiBoldTextSpan font_size="24px">blog</SemiBoldTextSpan>
         </HeaderItemDiv>
-        <MenuDiv>
-          <HeaderItemDiv onClick={onClickCV}>
-            <MediumTextSpan font_size="16px">CV</MediumTextSpan>
-          </HeaderItemDiv>
-        </MenuDiv> 
       </HeaderDiv>
     </SizeDiv>
   );
@@ -33,10 +27,6 @@ flex-direction: row;
 margin-top: 1%;
 margin-bottom:1%;
 margin-left: 3%;
-`
-
-const MenuDiv = styled.div`
-margin-left: 900px;
 `
 
 const HeaderItemDiv = styled.div`
