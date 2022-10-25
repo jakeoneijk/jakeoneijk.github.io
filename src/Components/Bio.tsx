@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import { ExtraBoldTextSpan, RegularTextSpan, SemiBoldTextSpan } from "../StyledComponents/StyledTextComponents";
 
 type BioProps = {
+  onClickHome: () => void;
   onClickCV: () => void;
 };
 
-function Bio({onClickCV}: BioProps){
+function Bio({onClickHome,onClickCV}: BioProps){
   return (
     <BioDiv className="Bio">
         <ProfileImg src="/Profile.png" alt="profile"/>
@@ -35,13 +36,16 @@ function Bio({onClickCV}: BioProps){
             <PersonalLinkImg src="/EMail.png" alt="git"/> 
               <SemiBoldTextSpan font_size="15px"> jakeoneijk@kaist.ac.kr </SemiBoldTextSpan>
           </BioTextDiv>
-          <BioTextDiv>
-            -----------------------
-          </BioTextDiv>
+          
           <PageMenuDiv>
-            <BioTextDiv>
-              <ExtraBoldTextSpan font_size="14px" onClick={onClickCV}> &nbsp; CV </ExtraBoldTextSpan>
-            </BioTextDiv>
+              <ul>
+                <li>
+                  <ExtraBoldTextSpan font_size="14px" onClick={onClickHome}> Home </ExtraBoldTextSpan>
+                </li>
+                <li>
+                  <ExtraBoldTextSpan font_size="14px" onClick={onClickCV}> CV </ExtraBoldTextSpan>
+                </li>
+              </ul>
           </PageMenuDiv>
         </PersonalLinkDiv>
         

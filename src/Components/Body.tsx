@@ -7,13 +7,14 @@ import {PageState} from "./PageState"
 
 type BodyProps = {
   pageState: PageState;
+  onClickHome: () => void;
   onClickCV: () => void;
 };
 
-function Body({pageState,onClickCV}:BodyProps) {
+function Body({pageState,onClickCV,onClickHome}:BodyProps) {
   return (
     <BodyDiv className="Body">
-      <Bio onClickCV={onClickCV}/>
+      <Bio onClickHome={onClickHome} onClickCV={onClickCV}/>
       <BodyContentDiv>
         {(pageState === PageState.HOME) ? <Home/> : ""}
         {(pageState === PageState.CV) ? <CV/>: ""}

@@ -14,12 +14,12 @@ function App() {
     <div className="App">
       <BrowserView>
         <Header onClickTitle={()=>{setPageState(PageState.HOME)}}/>
-        <Body pageState={pageState} onClickCV={()=>{setPageState(PageState.CV)}}/>
+        <Body pageState={pageState} onClickHome={()=>{setPageState(PageState.HOME)}} onClickCV={()=>{setPageState(PageState.CV)}}/>
         <Footer/>
       </BrowserView>
       <MobileView>
         <Header onClickTitle={()=>{setPageState(PageState.HOME)}}/>
-        <Body pageState={pageState} onClickCV={()=>{setPageState(PageState.CV)}}/>
+        <Body pageState={pageState} onClickHome={()=>{setPageState(PageState.HOME)}} onClickCV={()=>{setPageState(PageState.CV)}}/>
         <Footer/>
       </MobileView>
       
