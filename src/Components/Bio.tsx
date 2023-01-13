@@ -21,13 +21,19 @@ function Bio({onClickHome,onClickCV}: BioProps){
         </div>
         <PersonalLinkDiv>
           <BioTextDiv>
+            <PersonalLinkImg src="/GoogleScholar.png" alt="google scholar"/> 
+            <a href="https://scholar.google.com/citations?user=VNDwfVkAAAAJ" target="_blank" rel="noopener noreferrer">
+              <SemiBoldTextSpan font_size="15px"> Google Scholar </SemiBoldTextSpan>
+            </a>
+          </BioTextDiv>
+          <BioTextDiv>
             <PersonalLinkImg src="/GitHubIcon.png" alt="git"/> 
             <a href="https://github.com/jakeoneijk" target="_blank" rel="noopener noreferrer">
               <SemiBoldTextSpan font_size="15px"> GitHub </SemiBoldTextSpan>
             </a>
           </BioTextDiv>
           <BioTextDiv>
-            <PersonalLinkImg src="/Youtube.png" alt="git"/> 
+            <PersonalLinkImg src="/Youtube.png" alt="youtube"/> 
             <a href="https://www.youtube.com/channel/UCR5ICei5K6hmbzeWNz9JHuA" target="_blank" rel="noopener noreferrer">
               <SemiBoldTextSpan font_size="15px"> YouTube (My music) </SemiBoldTextSpan>
             </a>
