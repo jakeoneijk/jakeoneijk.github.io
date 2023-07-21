@@ -17,15 +17,17 @@ function Home() {
 }
 
 const HomeDiv = styled.div`
-margin-top : 130px;
+margin-top : 110px;
 margin-left : 130px;
 `
 
 const HomeImg = styled.img`
-width: 500px;
+width: 520px;
 `
 
 const TextDiv = styled.div`
+margin-top : 20px;
+font-family: arial;
 width: 500px;
 `
 
