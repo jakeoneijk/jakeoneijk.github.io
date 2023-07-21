@@ -67,7 +67,9 @@ width: 300px;
 `
 
 const ProfileImg = styled.img`
-width: 170px;
+border-radius: 10px;
+width: 120px;
+margin-bottom : 10px;
 `
 
 const BioTextDiv = styled.div`
