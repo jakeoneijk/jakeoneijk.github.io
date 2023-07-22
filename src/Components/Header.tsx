@@ -1,4 +1,4 @@
-import { ExtraBoldTextSpan, MediumTextSpan, SemiBoldTextSpan } from "../StyledComponents/StyledTextComponents";
+import { ExtraBoldTextSpan, SemiBoldTextSpan } from "../StyledComponents/StyledTextComponents";
 import styled from "styled-components";
 
 type HeaderProps = {
