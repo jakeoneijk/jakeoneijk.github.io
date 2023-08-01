@@ -27,7 +27,7 @@ width: 520px;
 
 const TextDiv = styled.div`
 margin-top : 20px;
-font-family: arial;
+font-family: 'Trebuchet MS', sans-serif;
 width: 500px;
 `
 
