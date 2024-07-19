@@ -27,6 +27,18 @@ function Bio({onClickHome,onClickCV}: BioProps){
             </a>
           </BioTextDiv>
           <BioTextDiv>
+            <PersonalLinkImg src="/SNSICon/twitter.png" alt="twitter"/> 
+            <a href="https://twitter.com/osalooloo" target="_blank" rel="noopener noreferrer">
+              <SemiBoldTextSpan font_size="15px"> Twitter </SemiBoldTextSpan>
+            </a>
+          </BioTextDiv>
+          <BioTextDiv>
+            <PersonalLinkImg src="/SNSICon/linkedin.png" alt="linkedin"/> 
+            <a href="https://www.linkedin.com/in/jaekwon-im-995b3b170" target="_blank" rel="noopener noreferrer">
+              <SemiBoldTextSpan font_size="15px"> LinkedIn </SemiBoldTextSpan>
+            </a>
+          </BioTextDiv>
+          <BioTextDiv>
             <PersonalLinkImg src="/GitHubIcon.png" alt="git"/> 
             <a href="https://github.com/jakeoneijk" target="_blank" rel="noopener noreferrer">
               <SemiBoldTextSpan font_size="15px"> GitHub </SemiBoldTextSpan>
