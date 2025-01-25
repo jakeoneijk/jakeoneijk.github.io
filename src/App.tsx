@@ -31,10 +31,16 @@ const buttonContainer = style({
   flexWrap: 'wrap',
   height: '40px',
   gap: size.spacing.large,
-  padding: size.spacing.large,
+  padding: `0px ${size.spacing.large}`,
   background: 'rgba(0, 0, 0, 0.04)',
   borderRadius: '10px',
   marginTop: `-${size.spacing.medium}`,
+})
+
+const buttonDivider = style({
+  width: '2px',
+  height: '30px',
+  background: 'rgba(0, 0, 0, 0.7)',
 })
 
 function App() {
@@ -51,6 +57,7 @@ function App() {
         >
           Home
         </Button>
+        <div className={buttonDivider} />
         <Button
           onClick={() => setPageState(PageState.CV)}
           textVariant={pageState === PageState.CV ? 'menu' : 'menuunselected'}

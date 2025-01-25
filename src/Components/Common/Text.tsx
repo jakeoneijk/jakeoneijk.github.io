@@ -10,6 +10,7 @@ type Props = {
 const text = style({
   fontFamily: 'Trebuchet MS',
   fontStyle: 'normal',
+  color: '#272727',
 })
 
 export const textVariants = styleVariants({
@@ -36,9 +37,7 @@ export const textVariants = styleVariants({
 })
 
 const colorVariants = styleVariants({
-  default: {
-    color: '#272727',
-  },
+  default: {},
   link: {
     color: '#0070f3',
     cursor: 'pointer',
