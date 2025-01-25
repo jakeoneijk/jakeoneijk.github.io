@@ -1,37 +1,29 @@
-import React from 'react';
-import styled from 'styled-components';
-import Bio from './Bio';
-import CV from './BodyComponents/CV';
-import Home from './BodyComponents/Home';
-import {PageState} from "./PageState"
+import styled from 'styled-components'
+import Bio from './Bio'
+import CV from './BodyComponents/CV'
+import Home from './BodyComponents/Home'
+import { PageState } from './PageState'
+import { style } from '@macaron-css/core'
+import size from '../Property/Size'
 
 type BodyProps = {
-  pageState: PageState;
-  onClickHome: () => void;
-  onClickCV: () => void;
-};
-
-function Body({pageState,onClickCV,onClickHome}:BodyProps) {
-  return (
-    <BodyDiv className="Body">
-      <Bio onClickHome={onClickHome} onClickCV={onClickCV}/>
-      <BodyContentDiv>
-        {(pageState === PageState.HOME) ? <Home/> : ""}
-        {(pageState === PageState.CV) ? <CV/>: ""}
-      </BodyContentDiv>
-    </BodyDiv>
-  );
+  pageState: PageState
 }
 
-const BodyDiv = styled.div`
-display: flex;
-flex-direction: row;
-height: 700px;
-justify-content: flex-start;;
-margin: 18px 56px 10px 56px;
-`
+const container = style({
+  width: '1000px',
+  height: '100%',
+  paddingTop: size.spacing.xl,
+  overflow: 'scroll',
+})
 
-const BodyContentDiv = styled.div`
-`
+function Body({ pageState }: BodyProps) {
+  return (
+    <div className={`${container} Body`}>
+      {pageState === PageState.HOME ? <Home /> : ''}
+      {pageState === PageState.CV ? <CV /> : ''}
+    </div>
+  )
+}
 
-export default Body;
+export default Body
