@@ -4,21 +4,33 @@ import {
   SemiBoldTextSpan,
 } from '../StyledComponents/StyledTextComponents'
 import size from '../Property/Size'
-import { style } from '@macaron-css/core'
+import { style, styleVariants } from '@macaron-css/core'
 
 import Text from './Common/Text'
 
-type BioProps = {}
+type Props = {
+  containerVariant?: keyof typeof containerVariants
+}
 
 const container = style({
   display: 'flex',
-  position: 'absolute',
-  top: '0px',
-  left: '0px',
   flexDirection: 'column',
-  width: '300px',
+
   paddingTop: size.spacing.large,
   paddingLeft: size.spacing.xl,
+})
+
+const containerVariants = styleVariants({
+  desktop: {
+    position: 'absolute',
+    top: '0px',
+    left: '0px',
+    width: '300px',
+  },
+  mobile: {
+    marginBottom: size.spacing.xl2,
+    width: '500px',
+  },
 })
 
 const name = style({
@@ -29,25 +41,62 @@ const content = style({
   marginLeft: size.spacing.medium,
 })
 
-function Bio({}: BioProps) {
+const contentVariants = styleVariants({
+  desktop: {},
+  mobile: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: size.spacing.large,
+  },
+})
+
+const profileContainer = style({})
+
+const profileContainerVariants = styleVariants({
+  desktop: {},
+  mobile: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+  },
+})
+
+const Bio = (props: Props) => {
   return (
-    <div className={container}>
+    <div
+      className={`${container} ${
+        containerVariants[props.containerVariant || 'desktop']
+      }`}
+    >
       <div className={name}>
         <Text variant='h1'>{'Jaekwon Im'}</Text>
       </div>
-      <div className={content}>
-        <ProfileImg src='/Profile.png' alt='profile' />
-        <div>
-          <BioTextDiv>
-            <SemiBoldTextSpan font_size='16px'>
-              Researcher & Developer
-            </SemiBoldTextSpan>
-          </BioTextDiv>
-          <BioTextDiv>
-            <RegularTextSpan font_size='14px'>
-              PhD Student | MAC Lab | GSCT, KAIST
-            </RegularTextSpan>
-          </BioTextDiv>
+      <div
+        className={`${content} ${
+          contentVariants[props.containerVariant || 'desktop']
+        }`}
+      >
+        <div
+          className={`${profileContainer} ${
+            profileContainerVariants[props.containerVariant || 'desktop']
+          }`}
+        >
+          <ProfileImg src='/Profile.png' alt='profile' />
+          <div>
+            <BioTextDiv>
+              <SemiBoldTextSpan font_size='16px'>
+                Researcher & Developer
+              </SemiBoldTextSpan>
+            </BioTextDiv>
+            <BioTextDiv>
+              <RegularTextSpan font_size='14px'>
+                PhD Student | MAC Lab | GSCT, KAIST
+              </RegularTextSpan>
+            </BioTextDiv>
+          </div>
         </div>
         <PersonalLinkDiv>
           <BioTextDiv>

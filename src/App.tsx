@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { globalStyle, style } from '@macaron-css/core'
 
@@ -45,10 +45,27 @@ const buttonDivider = style({
 
 function App() {
   const [pageState, setPageState] = useState(PageState.HOME)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      const currentwWidth =
+        document.documentElement.clientWidth || window.innerWidth
+      setIsMobile(currentwWidth <= 1400)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    // Initial check
+    handleResize()
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <div className={container}>
-      <Bio />
+      <Bio containerVariant={isMobile ? 'mobile' : 'desktop'} />
 
       <div className={buttonContainer}>
         <Button
