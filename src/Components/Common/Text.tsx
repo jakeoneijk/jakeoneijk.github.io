@@ -4,10 +4,10 @@ type Props = {
   children: JSX.Element | string
   variant?: keyof typeof textVariants
   style?: React.CSSProperties
+  link?: string
 }
 
 const text = style({
-  color: '#272727',
   fontFamily: 'Trebuchet MS',
   fontStyle: 'normal',
 })
@@ -29,11 +29,35 @@ export const textVariants = styleVariants({
     fontSize: '24px',
     color: 'rgba(0, 0, 0, 0.35)',
   },
+  description: {
+    fontSize: '14px',
+    fontWeight: 400,
+  },
+})
+
+const colorVariants = styleVariants({
+  default: {
+    color: '#272727',
+  },
+  link: {
+    color: '#0070f3',
+    cursor: 'pointer',
+  },
 })
 
 const Text = (props: Props) => {
+  const handleClick = (link: string) => {
+    //window.location.href = link
+    window.open(link, '_blank')
+  }
   return (
-    <span className={`${text} ${textVariants[props.variant || 'default']}`}>
+    <span
+      className={`${text} ${textVariants[props.variant || 'default']} ${
+        colorVariants[props.link ? 'link' : 'default']
+      }`}
+      style={props.style}
+      onClick={props.link ? () => handleClick(props.link as string) : undefined}
+    >
       {props.children}
     </span>
   )

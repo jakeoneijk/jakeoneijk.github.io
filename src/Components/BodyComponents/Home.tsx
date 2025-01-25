@@ -1,28 +1,60 @@
 import React from 'react'
 import styled from 'styled-components'
-import { RegularTextSpan } from '../../StyledComponents/StyledTextComponents'
 import size from '../../Property/Size'
 import { style } from '@macaron-css/core'
+import Text from '../Common/Text'
 
 const container = style({
+  marginTop: `${size.spacing.xl2}`,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
 })
 
+const Juhan = () => {
+  return (
+    <>
+      {`Profesor `}
+      <Text variant='description' link='https://mac.kaist.ac.kr/~juhan/'>
+        Juhan Nam
+      </Text>
+    </>
+  )
+}
+
+const AudAI = () => {
+  return (
+    <>
+      <Text
+        variant='description'
+        link='https://youtu.be/83V6FmmoOoU?si=uHEcz92XOnynRnEb'
+      >
+        AudAI
+      </Text>
+    </>
+  )
+}
+
 function Home() {
   return (
     <div className={`${container} Home`}>
       <HomeImg src='/Home.png' alt='profile' />
       <TextDiv>
-        <RegularTextSpan font_size='14px'>
-          I am a Ph.D. student at Music and Audio Computing Lab, KAIST, under
-          the supervision of Profesor Juhan Nam. My research interests include
-          audio processing and synthesis through deep learning. I am also an
-          amateur music producer. You can listen to my music from the youtube
-          link in my bio.
-        </RegularTextSpan>
+        <Text variant='description'>
+          <>
+            I am a Ph.D. student at Music and Audio Computing Lab, KAIST, under
+            the supervision of {Juhan()}. My research focuses on advancing the
+            quality and efficiency of generative models for audio generation and
+            processing, with a particular emphasis on audio restoration and
+            acoustic transfer. In addition to my academic work, I am the
+            co-founder and an AI/SW Engineer at {AudAI()}, where I contribute to
+            developing advanced voice synthesis technologies, including voice
+            conversion and singing voice synthesis modules. Additionally, I am
+            an amateur music producer, and you can find my music through the
+            YouTube.
+          </>
+        </Text>
       </TextDiv>
     </div>
   )
@@ -35,7 +67,7 @@ const HomeImg = styled.img`
 const TextDiv = styled.div`
   margin-top: 20px;
   font-family: 'Trebuchet MS', sans-serif;
-  width: 500px;
+  width: 520px;
 `
 
 export default Home
