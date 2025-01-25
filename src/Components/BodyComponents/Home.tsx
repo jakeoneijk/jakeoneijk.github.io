@@ -36,6 +36,19 @@ const AudAI = () => {
   )
 }
 
+const Music = () => {
+  return (
+    <>
+      <Text
+        variant='description'
+        link='https://www.youtube.com/channel/UCR5ICei5K6hmbzeWNz9JHuA'
+      >
+        YouTube
+      </Text>
+    </>
+  )
+}
+
 function Home() {
   return (
     <div className={`${container} Home`}>
@@ -51,8 +64,8 @@ function Home() {
             co-founder and an AI/SW Engineer at {AudAI()}, where I contribute to
             developing advanced voice synthesis technologies, including voice
             conversion and singing voice synthesis modules. Additionally, I am
-            an amateur music producer, and you can find my music through the
-            YouTube.
+            an amateur music producer, and you can find my music through{' '}
+            {Music()}.
           </>
         </Text>
       </TextDiv>
