@@ -23,7 +23,6 @@ const container = style({
   justifyContent: 'center',
   marginTop: size.spacing.xl,
 })
-
 const buttonContainer = style({
   display: 'flex',
   flexDirection: 'row',
