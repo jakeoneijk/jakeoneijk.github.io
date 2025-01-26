@@ -36,6 +36,7 @@ const bodyContainer = style({
   alignItems: 'center',
   justifyContent: 'center',
   width: size.section.bodyWidth,
+  flexShrink: 0,
   '@media': {
     [size.media.mobile]: {
       width: '100%',
