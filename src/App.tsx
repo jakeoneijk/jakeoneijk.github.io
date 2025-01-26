@@ -18,11 +18,32 @@ const container = style({
   width: '100%',
   height: '100%',
   display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'start',
+  justifyContent: 'space-between',
+  padding: `${size.spacing.large} ${size.spacing.xl}`,
+  '@media': {
+    [size.media.mobile]: {
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+  },
+})
+
+const bodyContainer = style({
+  display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  marginTop: size.spacing.xl,
+  width: size.section.bodyWidth,
+  '@media': {
+    [size.media.mobile]: {
+      width: '100%',
+      marginTop: size.spacing.xl,
+    },
+  },
 })
+
 const buttonContainer = style({
   display: 'flex',
   flexDirection: 'row',
@@ -34,7 +55,6 @@ const buttonContainer = style({
   padding: `0px ${size.spacing.large}`,
   background: 'rgba(0, 0, 0, 0.04)',
   borderRadius: '10px',
-  marginTop: `-${size.spacing.medium}`,
 })
 
 const buttonDivider = style({
@@ -43,10 +63,21 @@ const buttonDivider = style({
   background: 'rgba(0, 0, 0, 0.7)',
 })
 
+const placeHolder = style({
+  height: '100px',
+  width: size.section.bioWidth,
+  flexShrink: 0,
+  '@media': {
+    [size.media.mobile]: {
+      display: 'none',
+    },
+  },
+})
+
 function App() {
   const [pageState, setPageState] = useState(PageState.HOME)
-  const [isMobile, setIsMobile] = useState(false)
-
+  {
+    /** 
   useEffect(() => {
     const handleResize = () => {
       const currentwWidth =
@@ -62,29 +93,34 @@ function App() {
     // Cleanup
     return () => window.removeEventListener('resize', handleResize)
   }, [])
+  */
+  }
 
   return (
-    <div className={container}>
-      <Bio containerVariant={isMobile ? 'mobile' : 'desktop'} />
+    <div className={`${container} App`}>
+      <Bio />
+      <div className={bodyContainer}>
+        <div className={buttonContainer}>
+          <Button
+            onClick={() => setPageState(PageState.HOME)}
+            textVariant={
+              pageState === PageState.HOME ? 'menu' : 'menuunselected'
+            }
+          >
+            Home
+          </Button>
+          <div className={buttonDivider} />
+          <Button
+            onClick={() => setPageState(PageState.CV)}
+            textVariant={pageState === PageState.CV ? 'menu' : 'menuunselected'}
+          >
+            CV
+          </Button>
+        </div>
 
-      <div className={buttonContainer}>
-        <Button
-          onClick={() => setPageState(PageState.HOME)}
-          textVariant={pageState === PageState.HOME ? 'menu' : 'menuunselected'}
-        >
-          Home
-        </Button>
-        <div className={buttonDivider} />
-        <Button
-          onClick={() => setPageState(PageState.CV)}
-          textVariant={pageState === PageState.CV ? 'menu' : 'menuunselected'}
-        >
-          CV
-        </Button>
+        <Body pageState={pageState} />
       </div>
-
-      <Body pageState={pageState} />
-      <Footer />
+      <div className={placeHolder}></div>
     </div>
   )
 }

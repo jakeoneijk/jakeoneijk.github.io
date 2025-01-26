@@ -12,6 +12,25 @@ const container = style({
   justifyContent: 'center',
 })
 
+const image = style({
+  width: '520px',
+  '@media': {
+    [size.media.mobile]: {
+      width: '100%',
+    },
+  },
+})
+
+const textContainer = style({
+  width: '520px',
+  marginTop: `calc(${size.spacing.small} + ${size.spacing.large})`,
+  '@media': {
+    [size.media.mobile]: {
+      width: '100%',
+    },
+  },
+})
+
 const Juhan = () => {
   return (
     <>
@@ -52,8 +71,8 @@ const Music = () => {
 function Home() {
   return (
     <div className={`${container} Home`}>
-      <HomeImg src='/Home.png' alt='profile' />
-      <TextDiv>
+      <img className={image} src='/Home.png' alt='profile' />
+      <div className={textContainer}>
         <Text variant='description'>
           <>
             I am a Ph.D. student at Music and Audio Computing Lab, KAIST, under
@@ -68,19 +87,9 @@ function Home() {
             {Music()}.
           </>
         </Text>
-      </TextDiv>
+      </div>
     </div>
   )
 }
-
-const HomeImg = styled.img`
-  width: 520px;
-`
-
-const TextDiv = styled.div`
-  margin-top: 20px;
-  font-family: 'Trebuchet MS', sans-serif;
-  width: 520px;
-`
 
 export default Home

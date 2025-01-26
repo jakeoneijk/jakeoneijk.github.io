@@ -1,24 +1,33 @@
 import { style } from '@macaron-css/core'
-import React from 'react'
-import styled from 'styled-components'
+import size from '../../Property/Size'
 
 const container = style({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
+  '@media': {
+    [size.media.mobile]: {
+      width: '100%',
+    },
+  },
+})
+
+const pdf = style({
+  width: '850px',
+  height: '650px',
+  '@media': {
+    [size.media.mobile]: {
+      width: '100%',
+    },
+  },
 })
 function CV() {
   return (
     <div className={`${container} CV`}>
-      <IframeDiv src='/JAEKWON_IM_CV.pdf' />
+      <iframe className={pdf} src='/JAEKWON_IM_CV.pdf' />
     </div>
   )
 }
-
-const IframeDiv = styled.iframe`
-  width: 850px;
-  height: 650px;
-`
 
 export default CV

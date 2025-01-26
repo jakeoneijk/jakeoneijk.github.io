@@ -8,28 +8,17 @@ import { style, styleVariants } from '@macaron-css/core'
 
 import Text from './Common/Text'
 
-type Props = {
-  containerVariant?: keyof typeof containerVariants
-}
+type Props = {}
 
 const container = style({
   display: 'flex',
   flexDirection: 'column',
-
-  paddingTop: size.spacing.large,
-  paddingLeft: size.spacing.xl,
-})
-
-const containerVariants = styleVariants({
-  desktop: {
-    position: 'absolute',
-    top: '0px',
-    left: '0px',
-    width: '300px',
-  },
-  mobile: {
-    marginBottom: size.spacing.xl2,
-    width: '500px',
+  flexShrink: 0,
+  width: size.section.bioWidth,
+  '@media': {
+    [size.media.mobile]: {
+      alignItems: 'center',
+    },
   },
 })
 
@@ -41,51 +30,37 @@ const content = style({
   marginLeft: size.spacing.medium,
 })
 
-const contentVariants = styleVariants({
-  desktop: {},
-  mobile: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: size.spacing.large,
+const profileContainer = style({
+  '@media': {
+    [size.media.mobile]: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
   },
 })
 
-const profileContainer = style({})
-
-const profileContainerVariants = styleVariants({
-  desktop: {},
-  mobile: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center',
+const bioText = style({
+  '@media': {
+    [size.media.mobile]: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      marginBottom: size.spacing.large,
+    },
   },
 })
 
 const Bio = (props: Props) => {
   return (
-    <div
-      className={`${container} ${
-        containerVariants[props.containerVariant || 'desktop']
-      }`}
-    >
+    <div className={`${container} `}>
       <div className={name}>
         <Text variant='h1'>{'Jaekwon Im'}</Text>
       </div>
-      <div
-        className={`${content} ${
-          contentVariants[props.containerVariant || 'desktop']
-        }`}
-      >
-        <div
-          className={`${profileContainer} ${
-            profileContainerVariants[props.containerVariant || 'desktop']
-          }`}
-        >
+      <div className={`${content} `}>
+        <div className={`${profileContainer} `}>
           <ProfileImg src='/Profile.png' alt='profile' />
-          <div>
+          <div className={bioText}>
             <BioTextDiv>
               <SemiBoldTextSpan font_size='16px'>
                 Researcher & Developer

@@ -11,7 +11,6 @@ type BodyProps = {
 }
 
 const container = style({
-  width: '1000px',
   height: '100%',
   paddingTop: size.spacing.xl,
   overflow: 'scroll',
