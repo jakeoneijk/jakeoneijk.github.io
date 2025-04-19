@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import { globalStyle, style } from '@macaron-css/core'
 
 import Body from './Components/Body'
-import Footer from './Components/Footer'
 import { PageState } from './Components/PageState'
 import Bio from './Components/Bio'
 import size from './Property/Size'
 import Button from './Components/Common/Button'
-import Text from './Components/Common/Text'
 
 globalStyle('*', {
   boxSizing: 'border-box',
 })
+
+const BUTTON_WIDTH = '100px'
 
 const container = style({
   width: '100%',
@@ -21,7 +21,7 @@ const container = style({
   flexDirection: 'row',
   alignItems: 'start',
   justifyContent: 'space-between',
-  padding: `${size.spacing.large} ${size.spacing.xl}`,
+  padding: `${size.spacing.l} ${size.spacing.xl}`,
   '@media': {
     [size.media.mobile]: {
       flexDirection: 'column',
@@ -51,9 +51,10 @@ const buttonContainer = style({
   alignContent: 'center',
   justifyContent: 'center',
   flexWrap: 'wrap',
+  width: 'fit-content',
   height: '40px',
-  gap: size.spacing.large,
-  padding: `0px ${size.spacing.large}`,
+  gap: size.spacing.s,
+  padding: `0px ${size.spacing.s}`,
   background: 'rgba(0, 0, 0, 0.04)',
   borderRadius: '10px',
 })
@@ -77,25 +78,6 @@ const placeHolder = style({
 
 function App() {
   const [pageState, setPageState] = useState(PageState.HOME)
-  {
-    /** 
-  useEffect(() => {
-    const handleResize = () => {
-      const currentwWidth =
-        document.documentElement.clientWidth || window.innerWidth
-      setIsMobile(currentwWidth <= 1400)
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    // Initial check
-    handleResize()
-
-    // Cleanup
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-  */
-  }
 
   return (
     <div className={`${container} App`}>
@@ -107,6 +89,9 @@ function App() {
             textVariant={
               pageState === PageState.HOME ? 'menu' : 'menuunselected'
             }
+            style={{
+              width: BUTTON_WIDTH,
+            }}
           >
             Home
           </Button>
@@ -114,8 +99,23 @@ function App() {
           <Button
             onClick={() => setPageState(PageState.CV)}
             textVariant={pageState === PageState.CV ? 'menu' : 'menuunselected'}
+            style={{
+              width: BUTTON_WIDTH,
+            }}
           >
             CV
+          </Button>
+          <div className={buttonDivider} />
+          <Button
+            onClick={() => setPageState(PageState.PROJECTS)}
+            textVariant={
+              pageState === PageState.PROJECTS ? 'menu' : 'menuunselected'
+            }
+            style={{
+              width: BUTTON_WIDTH,
+            }}
+          >
+            Projects
           </Button>
         </div>
 

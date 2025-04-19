@@ -4,9 +4,9 @@ const size = {
     bodyWidth: '850px',
   },
   spacing: {
-    small: '4px',
-    medium: '8px',
-    large: '16px',
+    s: '4px',
+    m: '8px',
+    l: '16px',
     xl: '32px',
     xl2: '64px',
   },

@@ -5,6 +5,7 @@ type Props = {
   children: JSX.Element | string
   textVariant?: keyof typeof textVariants
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  style?: React.CSSProperties
 }
 
 const variants = styleVariants({
@@ -16,6 +17,7 @@ const variants = styleVariants({
     transition: '0.2s',
     width: 'fit-content',
     height: 'fit-content',
+    borderRadius: '10px',
     ':hover': {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
     },
@@ -24,7 +26,11 @@ const variants = styleVariants({
 
 const Button = (props: Props) => {
   return (
-    <button className={variants['text']} onClick={props.onClick}>
+    <button
+      className={`${variants['text']}`}
+      onClick={props.onClick}
+      style={props.style}
+    >
       <Text variant={props.textVariant}>{props.children}</Text>
     </button>
   )

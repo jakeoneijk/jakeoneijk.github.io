@@ -1,7 +1,7 @@
 import { style, styleVariants } from '@macaron-css/core'
 
 type Props = {
-  children: JSX.Element | string
+  children: JSX.Element | JSX.Element[] | string
   variant?: keyof typeof textVariants
   style?: React.CSSProperties
   link?: string
@@ -22,6 +22,10 @@ export const textVariants = styleVariants({
     fontSize: '40px',
     fontWeight: 600,
   },
+  h2: {
+    fontSize: '28px',
+    fontWeight: 600,
+  },
   menu: {
     fontSize: '24px',
     fontWeight: 900,
@@ -33,6 +37,11 @@ export const textVariants = styleVariants({
   description: {
     fontSize: '14px',
     fontWeight: 400,
+  },
+  subDescription: {
+    fontSize: '14px',
+    fontWeight: 400,
+    color: 'rgba(0, 0, 0, 0.5)',
   },
 })
 

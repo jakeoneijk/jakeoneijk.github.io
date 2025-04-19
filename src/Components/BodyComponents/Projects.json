@@ -1,0 +1,53 @@
+{
+  "Research": [
+    {
+      "title": "FlashSR: One-step Versatile Audio Super-resolution via Diffusion Distillation",
+      "author": "Jaekwon Im, Juhan Nam",
+      "note": "Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2025",
+      "link": "https://jakeoneijk.github.io/flashsr-demo/",
+      "embLink": "https://jakeoneijk.github.io/flashsr-demo/",
+      "bulletPoints": [
+        "A one-step diffusion model for audio super-resolution, upsampling music, speech, and sound effects from 4–32kHz to 48kHz.",
+        "Applies diffusion distillation and introduces the SR Vocoder, specifically designed for SR models operating on mel-spectrograms.",
+        "Achieves performance approximately 14 times faster than real-time on a single A6000 GPU."
+      ]
+    },
+    {
+      "title": "DIFFRENT: A Diffusion Model for Recording Environment Transfer of Speech",
+      "author": "Jaekwon Im, Juhan Nam",
+      "note": "Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2024",
+      "link": "https://jakeoneijk.github.io/diffrent-demo/",
+      "embLink": "https://www.youtube.com/embed/NYptYx7tMBY",
+      "bulletPoints": [
+        "A diffusion model for recording environment transfer that applies the recording conditions of a reference speech to an input while preserving its content.",
+        "Validate it in the speech enhancement and acoustic matching scenarios and show that the model achieves superior performance in both objective and subjective evaluation.",
+        "Shows that the recording environment encoder, trained jointly with the diffusion decoder without an additional loss, achieves better disentanglement than prior triplet-loss-based acoustic embedding network."
+      ]
+    },
+    {
+      "title": "Video-Foley: Two-Stage Video-To-Sound Generation via Temporal Event Condition for Foley Sound",
+      "author": "Junwon Lee, Jaekwon Im, Dabin Kim, Juhan Nam",
+      "note": "ArXiv 2024",
+      "link": "https://jnwnlee.github.io/video-foley-demo/",
+      "embLink": "https://www.youtube.com/embed/5FWNL6KoL08",
+      "bulletPoints": [
+        "My role: Implemented the RMS2Sound stage (RMS-ControlNet).",
+        "Leverages temporal event conditions for annotation-free training of highly synchronized foley sound generation.",
+        "A two-stage model comprising Video2RMS and RMS2Sound (RMS-ControlNet)."
+      ]
+    }
+  ],
+  "Industry": [
+    {
+      "title": "VOX Factory",
+      "author": "AudAi (Co-founder & AI / SW Engineer)",
+      "note": "May 2023 - Jun 2025",
+      "link": "https://voxfactory.app/",
+      "embLink": "https://www.youtube.com/embed/83V6FmmoOoU",
+      "bulletPoints": [
+        "Research on neural vocoders and singing voice synthesis.",
+        "Product development of Vox Factory using SolidJS."
+      ]
+    }
+  ]
+}

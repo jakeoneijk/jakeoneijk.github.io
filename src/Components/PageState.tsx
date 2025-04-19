@@ -1,6 +1,7 @@
 enum PageState {
-    HOME,
-    CV
-  }
+  HOME,
+  CV,
+  PROJECTS,
+}
 
-export {PageState}
+export { PageState }

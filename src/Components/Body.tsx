@@ -1,10 +1,9 @@
-import styled from 'styled-components'
-import Bio from './Bio'
-import CV from './BodyComponents/CV'
-import Home from './BodyComponents/Home'
 import { PageState } from './PageState'
 import { style } from '@macaron-css/core'
 import size from '../Property/Size'
+import CV from './BodyComponents/CV'
+import Home from './BodyComponents/Home'
+import Projects from './BodyComponents/Projects'
 
 type BodyProps = {
   pageState: PageState
@@ -21,6 +20,7 @@ function Body({ pageState }: BodyProps) {
     <div className={`${container} Body`}>
       {pageState === PageState.HOME ? <Home /> : ''}
       {pageState === PageState.CV ? <CV /> : ''}
+      {pageState === PageState.PROJECTS ? <Projects /> : ''}
     </div>
   )
 }

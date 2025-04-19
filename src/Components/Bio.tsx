@@ -27,7 +27,7 @@ const name = style({
 })
 
 const content = style({
-  marginLeft: size.spacing.medium,
+  marginLeft: size.spacing.m,
 })
 
 const profileContainer = style({
@@ -46,7 +46,7 @@ const bioText = style({
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      marginBottom: size.spacing.large,
+      marginBottom: size.spacing.l,
     },
   },
 })
