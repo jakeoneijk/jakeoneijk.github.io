@@ -12,7 +12,7 @@ globalStyle('*', {
   boxSizing: 'border-box',
 })
 
-const BUTTON_WIDTH = '100px'
+const BUTTON_WIDTH = '96px'
 
 const container = style({
   width: '100%',
