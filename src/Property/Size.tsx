@@ -6,6 +6,7 @@ const size = {
   spacing: {
     s: '4px',
     m: '8px',
+    ml: '12px',
     l: '16px',
     xl: '32px',
     xl2: '64px',

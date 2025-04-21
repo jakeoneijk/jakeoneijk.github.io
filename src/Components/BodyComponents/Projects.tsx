@@ -27,6 +27,12 @@ const projectContainer = style({
   width: '100%',
 })
 
+const categoryContainer = style({
+  padding: size.spacing.m,
+  marginBottom: size.spacing.ml,
+  background: '#F2F0EF',
+})
+
 const iframeContainer = style({
   display: 'flex',
   flexDirection: 'column',
@@ -63,9 +69,11 @@ function Projects() {
     <div className={container}>
       {['Research', 'Industry'].map((category) => (
         <div key={category} className={projectContainer}>
-          <Text variant='description' style={{ background: '#F2F0EF' }}>
-            {category}
-          </Text>
+          <div className={`${categoryContainer} categoryContainer`}>
+            <Text variant='description'>
+              <strong>{category}</strong>
+            </Text>
+          </div>
           {projects[category as ProjectType].map((project, index) => (
             <div key={index} className={projectContainer}>
               <Text variant='h2'>{project.title}</Text>
