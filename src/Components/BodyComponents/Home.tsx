@@ -79,7 +79,6 @@ function Home() {
     <div className={`${container} Home`}>
       <img className={image} src='/Home.png' alt='profile' />
       <div className={textContainer}>
-        {/* 
         <div className={alertContainer}>
           <Text style={{ background: '#F2F0EF' }}>
             <strong>
@@ -87,7 +86,6 @@ function Home() {
             </strong>
           </Text>
         </div>
-        */}
         <Text variant='description'>
           <>
             I am a Ph.D. student at Music and Audio Computing Lab, KAIST, under
