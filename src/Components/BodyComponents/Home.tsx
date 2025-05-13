@@ -85,7 +85,9 @@ function Home() {
               🚀 Looking for research internship opportunities now! 🚀
             </strong>
           </Text>
-          <div style={{ background: '#F2F0EF' }}>Available from July 2025.</div>
+          <div style={{ background: '#F2F0EF' }}>
+            Available from August 2025.
+          </div>
         </div>
         <Text variant='description'>
           <>
