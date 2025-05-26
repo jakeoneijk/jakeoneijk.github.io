@@ -31,7 +31,7 @@
       "link": "https://jnwnlee.github.io/video-foley-demo/",
       "embLink": "https://www.youtube.com/embed/5FWNL6KoL08",
       "bulletPoints": [
-        "My role: Implemented the RMS2Sound stage (RMS-ControlNet).",
+        "My role: Implemented the RMS2Sound (RMS-ControlNet).",
         "Leverages temporal event conditions for annotation-free training of highly synchronized foley sound generation.",
         "A two-stage model comprising Video2RMS and RMS2Sound (RMS-ControlNet)."
       ]
