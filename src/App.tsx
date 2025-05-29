@@ -1,6 +1,6 @@
 import { useState } from 'react'
-
 import { globalStyle, style } from '@macaron-css/core'
+import { useLocation } from 'react-router-dom'
 
 import Body from './Components/Body'
 import { PageState } from './Components/PageState'
@@ -77,49 +77,53 @@ const placeHolder = style({
 })
 
 function App() {
-  const [pageState, setPageState] = useState(PageState.HOME)
-
+  const location = useLocation()
   return (
     <div className={`${container} App`}>
       <Bio />
       <div className={bodyContainer}>
         <div className={buttonContainer}>
-          <Button
-            onClick={() => setPageState(PageState.HOME)}
-            textVariant={
-              pageState === PageState.HOME ? 'menu' : 'menuunselected'
-            }
-            style={{
-              width: BUTTON_WIDTH,
-            }}
-          >
-            Home
-          </Button>
+          <a href='/'>
+            <Button
+              textVariant={
+                location.pathname === '/' ? 'menu' : 'menuunselected'
+              }
+              style={{
+                width: BUTTON_WIDTH,
+              }}
+            >
+              Home
+            </Button>
+          </a>
           <div className={buttonDivider} />
-          <Button
-            onClick={() => setPageState(PageState.CV)}
-            textVariant={pageState === PageState.CV ? 'menu' : 'menuunselected'}
-            style={{
-              width: BUTTON_WIDTH,
-            }}
-          >
-            CV
-          </Button>
+          <a href='/cv'>
+            <Button
+              textVariant={
+                location.pathname === '/cv' ? 'menu' : 'menuunselected'
+              }
+              style={{
+                width: BUTTON_WIDTH,
+              }}
+            >
+              CV
+            </Button>
+          </a>
           <div className={buttonDivider} />
-          <Button
-            onClick={() => setPageState(PageState.PROJECTS)}
-            textVariant={
-              pageState === PageState.PROJECTS ? 'menu' : 'menuunselected'
-            }
-            style={{
-              width: BUTTON_WIDTH,
-            }}
-          >
-            Projects
-          </Button>
+          <a href='/projects'>
+            <Button
+              textVariant={
+                location.pathname === '/projects' ? 'menu' : 'menuunselected'
+              }
+              style={{
+                width: BUTTON_WIDTH,
+              }}
+            >
+              Projects
+            </Button>
+          </a>
         </div>
 
-        <Body pageState={pageState} />
+        <Body />
       </div>
       <div className={placeHolder}></div>
     </div>

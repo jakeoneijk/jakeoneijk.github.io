@@ -1,13 +1,12 @@
-import { PageState } from './PageState'
 import { style } from '@macaron-css/core'
+import { Routes, Route, Navigate } from 'react-router-dom'
+
 import size from '../Property/Size'
 import CV from './BodyComponents/CV'
 import Home from './BodyComponents/Home'
 import Projects from './BodyComponents/Projects'
 
-type BodyProps = {
-  pageState: PageState
-}
+type BodyProps = {}
 
 const container = style({
   height: '100%',
@@ -15,12 +14,15 @@ const container = style({
   overflow: 'scroll',
 })
 
-function Body({ pageState }: BodyProps) {
+function Body({}: BodyProps) {
   return (
     <div className={`${container} Body`}>
-      {pageState === PageState.HOME ? <Home /> : ''}
-      {pageState === PageState.CV ? <CV /> : ''}
-      {pageState === PageState.PROJECTS ? <Projects /> : ''}
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/cv' element={<CV />} />
+        <Route path='/projects' element={<Projects />} />
+        <Route path='*' element={<Navigate to='/' />} />
+      </Routes>
     </div>
   )
 }
