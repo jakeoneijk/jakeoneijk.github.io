@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import { globalStyle, style } from '@macaron-css/core'
 import { useLocation } from 'react-router-dom'
 
 import Body from './Components/Body'
-import { PageState } from './Components/PageState'
 import Bio from './Components/Bio'
 import size from './Property/Size'
 import Button from './Components/Common/Button'

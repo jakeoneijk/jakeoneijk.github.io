@@ -98,8 +98,8 @@ function Home() {
             acoustic transfer. Previously, I was the co-founder and an AI/SW
             Engineer at {AudAI()}, where I contributed to developing advanced
             voice synthesis technologies, including voice conversion and singing
-            voice synthesis modules. Additionally, I am an amateur music
-            producer, and you can find my music through {Music()}.
+            voice synthesis modules. Additionally, I am a music producer, and
+            you can find my music through {Music()}.
           </>
         </Text>
       </div>
