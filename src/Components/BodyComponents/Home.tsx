@@ -80,7 +80,7 @@ function Home() {
       <img className={image} src='/Home.png' alt='profile' />
       <div className={textContainer}>
         <div className={alertContainer}>
-          <Text style={{ background: '#F2F0EF' }}>
+          {/*<Text style={{ background: '#F2F0EF' }}>
             <strong>
               🚀 Looking for research internship opportunities now! 🚀
             </strong>
@@ -88,6 +88,7 @@ function Home() {
           <div style={{ background: '#F2F0EF' }}>
             Available from August 2025.
           </div>
+          */}
         </div>
         <Text variant='description'>
           <>
