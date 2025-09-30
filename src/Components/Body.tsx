@@ -12,6 +12,17 @@ const container = style({
   height: '100%',
   paddingTop: size.spacing.xl,
   overflow: 'scroll',
+  
+  '::-webkit-scrollbar-thumb': {
+    backgroundColor: 'transparent',
+  },
+  '::-webkit-scrollbar-track': {
+    backgroundColor: 'transparent',
+  },
+
+  // For Firefox
+  scrollbarWidth: 'thin',
+  scrollbarColor: 'transparent transparent',
 })
 
 function Body({}: BodyProps) {
