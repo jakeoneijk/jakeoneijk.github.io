@@ -1,6 +1,19 @@
 {
   "Research": [
     {
+      "title": "SAGA-SR: Semantically and Acoustically Guided Audio Super-Resolution",
+      "author": "Jaekwon Im, Juhan Nam",
+      "note": "",
+      "link": "https://jakeoneijk.github.io/saga-sr-project/",
+      "embLink": "https://jakeoneijk.github.io/saga-sr-project/",
+      "bulletPoints": [
+        "A versatile audio super-resolution model that upsamples music, speech, and sound effects from 4–32kHz to 44.1kHz.",
+        "Combines text and spectral roll-off embeddings for robust and semantically aligned reconstruction.",
+        "Based on a DiT backbone trained with a flow matching objective.",
+        "Achieves state-of-the-art performance in both objective and subjective evaluations."
+      ]
+    },
+    {
       "title": "FlashSR: One-step Versatile Audio Super-resolution via Diffusion Distillation",
       "author": "Jaekwon Im, Juhan Nam",
       "note": "Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2025",
@@ -47,6 +60,16 @@
       "bulletPoints": [
         "Research on neural vocoders and singing voice synthesis.",
         "Product development of Vox Factory using SolidJS."
+      ]
+    },
+    {
+      "title": "AI Voice Collaboration with SM Entertainment (nævis – Sensitive)",
+      "author": "AudAi (Co-founder & AI / SW Engineer)",
+      "note": "Released Aug 2025",
+      "link": "",
+      "embLink": "https://www.youtube.com/embed/Zg4rV7douMs?si=uEF7HUmunIIdCnsZ",
+      "bulletPoints": [
+        "AudAi provided AI voice technology for SM Entertainment’s virtual artist nævis."
       ]
     }
   ]
