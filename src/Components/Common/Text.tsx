@@ -1,7 +1,8 @@
+import { type ReactNode } from "react";
 import { style, styleVariants } from '@macaron-css/core'
 
 type Props = {
-  children: JSX.Element | JSX.Element[] | string
+  children: ReactNode | ReactNode[] | string
   variant?: keyof typeof textVariants
   style?: React.CSSProperties
   link?: string

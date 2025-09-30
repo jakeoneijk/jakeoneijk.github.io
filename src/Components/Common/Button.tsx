@@ -1,8 +1,9 @@
+import { type ReactNode } from "react";
 import { styleVariants } from '@macaron-css/core'
 import Text, { textVariants } from './Text'
 
 type Props = {
-  children: JSX.Element | string
+  children: ReactNode
   textVariant?: keyof typeof textVariants
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   style?: React.CSSProperties
