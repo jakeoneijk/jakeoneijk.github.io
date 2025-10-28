@@ -37,6 +37,16 @@ const textContainer = style({
   },
 })
 
+const MacLab = () => {
+  return (
+    <>
+      <Text variant='description' link='https://mac.kaist.ac.kr/'>
+        Music and Audio Computing Lab
+      </Text>
+    </>
+  )
+}
+
 const Juhan = () => {
   return (
     <>
@@ -80,11 +90,12 @@ function Home() {
       <img className={image} src='/Home.png' alt='profile' />
       <div className={textContainer}>
         <div className={alertContainer}>
-          {/*<Text style={{ background: '#F2F0EF' }}>
+          <Text style={{ background: '#F2F0EF' }}>
             <strong>
-              🚀 Looking for research internship opportunities now! 🚀
+              🚀 Looking for 2026 Summer Research Internship opportunities! 🚀
             </strong>
           </Text>
+          {/*
           <div style={{ background: '#F2F0EF' }}>
             Available from August 2025.
           </div>
@@ -92,15 +103,11 @@ function Home() {
         </div>
         <Text variant='description'>
           <>
-            I am a Ph.D. student at Music and Audio Computing Lab, KAIST, under
-            the supervision of {Juhan()}. My research focuses on advancing the
-            quality and efficiency of generative models for audio generation and
-            processing, with a particular emphasis on audio restoration and
-            acoustic transfer. Previously, I was the co-founder and an AI/SW
-            Engineer at {AudAI()}, where I contributed to developing advanced
-            voice synthesis technologies, including voice conversion and singing
-            voice synthesis modules. Additionally, I am a music producer, and
-            you can find my music through {Music()}.
+            I am a Ph.D. candidate at KAIST ({MacLab()}) advised by {Juhan()}. 
+            My research focuses on improving the quality, efficiency, and controllability of generative models for audio generation and processing. 
+            I am passionate about developing audio generative models that achieve high perceptual quality in real-world scenarios, and I have worked on tasks such as video-to-audio generation, audio super-resolution, and acoustic transfer. 
+            Previously, I co-founded {AudAI()}, where I contributed to the development of singing voice synthesis, voice conversion, and neural vocoder. 
+            Additionally, I am a music producer, and you can find my music through {Music()}.
           </>
         </Text>
       </div>
