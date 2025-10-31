@@ -92,7 +92,7 @@ function Home() {
         <div className={alertContainer}>
           <Text style={{ background: '#F2F0EF' }}>
             <strong>
-              🚀 Looking for 2026 Summer Research Internship opportunities! 🚀
+              🚀 Looking for 2026 Research Internship opportunities! 🚀
             </strong>
           </Text>
           {/*
