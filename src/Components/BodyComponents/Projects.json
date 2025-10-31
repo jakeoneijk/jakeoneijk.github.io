@@ -5,7 +5,6 @@
       "author": "Jaekwon Im, Juhan Nam",
       "note": "",
       "link": "https://jakeoneijk.github.io/saga-sr-project/",
-      "embLink": "https://jakeoneijk.github.io/saga-sr-project/",
       "bulletPoints": [
         "A versatile audio super-resolution model that upsamples music, speech, and sound effects from 4–32kHz to 44.1kHz.",
         "Combines text and spectral roll-off embeddings for robust and semantically aligned reconstruction.",
@@ -18,7 +17,6 @@
       "author": "Jaekwon Im, Juhan Nam",
       "note": "Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2025",
       "link": "https://jakeoneijk.github.io/flashsr-demo/",
-      "embLink": "https://jakeoneijk.github.io/flashsr-demo/",
       "bulletPoints": [
         "A one-step diffusion model for audio super-resolution, upsampling music, speech, and sound effects from 4–32kHz to 48kHz.",
         "Applies diffusion distillation and introduces the SR Vocoder, specifically designed for SR models operating on mel-spectrograms.",

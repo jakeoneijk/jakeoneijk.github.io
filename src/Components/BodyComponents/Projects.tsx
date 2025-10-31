@@ -40,7 +40,12 @@ const iframeContainer = style({
   justifyContent: 'flex-start',
   width: '100%',
   height: IFRAME_HEIGHT,
-  marginBottom: (-1 * (IFRAME_HEIGHT * (1 - IFRAME_SCALE))) / 2,
+  marginBottom: (-1 * (IFRAME_HEIGHT * (1 - IFRAME_SCALE))),
+})
+
+const spacingDiv = style({
+  width: '100%',
+  height: size.spacing.xl2
 })
 
 const iframeClass = style({
@@ -90,7 +95,7 @@ function Projects() {
                   </Text>
                 </div>
               )}
-              <ul>
+              <ul style={!project.embLink ? { marginBottom: '0px' } : {}}>
                 {project.bulletPoints.map((point, index) => (
                   <li key={index}>
                     <Text key={index} variant='description'>
@@ -99,9 +104,12 @@ function Projects() {
                   </li>
                 ))}
               </ul>
-              <div className={iframeContainer}>
-                <iframe className={iframeClass} src={project.embLink} />
-              </div>
+              {project.embLink && (
+                <div className={iframeContainer}>
+                  <iframe className={iframeClass} src={project.embLink} />
+                </div>
+              )}
+              <div className={spacingDiv} />
             </div>
           ))}
         </div>
