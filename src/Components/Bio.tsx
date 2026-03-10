@@ -93,16 +93,6 @@ const Bio = (props: Props) => {
             </a>
           </BioTextDiv>
           <BioTextDiv>
-            <PersonalLinkImg src='/SNSICon/twitter.png' alt='twitter' />
-            <a
-              href='https://twitter.com/osalooloo'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <SemiBoldTextSpan font_size='15px'> Twitter </SemiBoldTextSpan>
-            </a>
-          </BioTextDiv>
-          <BioTextDiv>
             <PersonalLinkImg src='/SNSICon/linkedin.png' alt='linkedin' />
             <a
               href='https://www.linkedin.com/in/jaekwon-im-995b3b170'
@@ -110,6 +100,16 @@ const Bio = (props: Props) => {
               rel='noopener noreferrer'
             >
               <SemiBoldTextSpan font_size='15px'> LinkedIn </SemiBoldTextSpan>
+            </a>
+          </BioTextDiv>
+          <BioTextDiv>
+            <PersonalLinkImg src='/SNSICon/twitter.png' alt='twitter' />
+            <a
+              href='https://twitter.com/osalooloo'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <SemiBoldTextSpan font_size='15px'> Twitter </SemiBoldTextSpan>
             </a>
           </BioTextDiv>
           <BioTextDiv>

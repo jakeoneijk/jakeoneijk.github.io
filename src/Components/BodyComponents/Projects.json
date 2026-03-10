@@ -3,7 +3,7 @@
     {
       "title": "SAGA-SR: Semantically and Acoustically Guided Audio Super-Resolution",
       "author": "Jaekwon Im, Juhan Nam",
-      "note": "",
+      "note": "Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2026",
       "link": "https://jakeoneijk.github.io/saga-sr-project/",
       "bulletPoints": [
         "A versatile audio super-resolution model that upsamples music, speech, and sound effects from 4–32kHz to 44.1kHz.",
