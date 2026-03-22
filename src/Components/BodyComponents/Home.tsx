@@ -103,7 +103,7 @@ function Home() {
         </div>
         <Text variant='description'>
           <>
-            I am a Ph.D. candidate at KAIST ({MacLab()}) advised by {Juhan()}. 
+            I am a final-year Ph.D. candidate at KAIST ({MacLab()}) advised by {Juhan()}. 
             My research focuses on improving the quality, efficiency, and controllability of generative models for audio generation and processing. 
             I am passionate about developing audio generative models that achieve high perceptual quality in real-world scenarios, and I have worked on tasks such as video-to-audio generation, audio super-resolution, and acoustic transfer. 
             Previously, I co-founded {AudAI()}, where I contributed to the development of singing voice synthesis, voice conversion, and neural vocoder. 
