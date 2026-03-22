@@ -50,7 +50,7 @@ const MacLab = () => {
 const Juhan = () => {
   return (
     <>
-      {`Profesor `}
+      {`Professor `}
       <Text variant='description' link='https://mac.kaist.ac.kr/~juhan/'>
         Juhan Nam
       </Text>
