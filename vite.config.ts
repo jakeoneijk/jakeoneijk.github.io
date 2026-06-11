@@ -1,11 +1,24 @@
-import { macaronVitePlugin } from '@macaron-css/vite'
+/// <reference types="vitest/config" />
+import { fileURLToPath, URL } from 'node:url'
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   base: '/',
-  plugins: [macaronVitePlugin(), react()],
+  plugins: [vanillaExtractPlugin(), react()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
   server: {
     port: 3000,
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.ts',
+    css: true,
   },
 })
