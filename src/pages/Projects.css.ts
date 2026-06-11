@@ -5,8 +5,6 @@ import size, { color, font } from '../theme'
 export const container = style({
   width: size.section.bodyWidth,
   maxWidth: '100%',
-  height: '100%',
-  overflow: 'hidden',
   '@media': {
     [size.media.mobile]: {
       width: '100%',
