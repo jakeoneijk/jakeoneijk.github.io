@@ -32,10 +32,10 @@ export const categoryHeader = style({
 export const projectTitle = style({
   margin: 0,
   fontFamily: font.body,
-  fontSize: '19px',
+  fontSize: '22px',
   fontWeight: 600,
-  lineHeight: 1.35,
-  letterSpacing: '-0.01em',
+  lineHeight: 1.3,
+  letterSpacing: '-0.015em',
   color: color.textStrong,
 })
 
@@ -55,7 +55,8 @@ export const spacingDiv = style({
 
 export const embedCard = style({
   width: '100%',
-  height: '460px',
+  maxWidth: '600px',
+  aspectRatio: '16 / 9',
   marginTop: size.spacing.m,
   borderRadius: size.radius.l,
   border: `1px solid ${color.border}`,

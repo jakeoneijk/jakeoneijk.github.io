@@ -27,8 +27,9 @@ src/
   theme.ts              Design tokens (size, color, font, breakpoints)
   config/
     navigation.ts       Nav items (single source of truth for the menu)
+  data/                 All editable content lives here
+    profile.ts          Name, role, affiliation, profile image
     links.ts            Social links + profile link data
-  data/
     projects.ts         Typed research & industry project content
   components/
     Layout.tsx          App shell: Bio + nav + <Outlet/>

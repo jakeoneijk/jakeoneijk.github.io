@@ -1,5 +1,5 @@
 import { Text } from '@/components/Text'
-import { profileLinks } from '@/config/links'
+import { profileLinks } from '@/data/links'
 import * as styles from './Home.css'
 
 export const Home = () => {
