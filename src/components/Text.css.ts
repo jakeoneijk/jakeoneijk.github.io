@@ -11,11 +11,10 @@ const text = style({
 export const textVariants = styleVariants({
   default: { fontSize: '16px', fontWeight: 400, lineHeight: 1.6 },
   h1: {
-    fontFamily: font.heading,
-    fontSize: '42px',
-    fontWeight: 600,
+    fontSize: '40px',
+    fontWeight: 700,
     lineHeight: 1.1,
-    letterSpacing: '-0.01em',
+    letterSpacing: '-0.03em',
   },
   description: { fontSize: '15px', fontWeight: 400, lineHeight: 1.7 },
   subDescription: {

@@ -1,6 +1,6 @@
 const size = {
   section: {
-    bioWidth: '250px',
+    bioWidth: '290px',
     bodyWidth: '850px',
   },
   spacing: {
@@ -37,7 +37,6 @@ const color = {
 
 const font = {
   body: "'Inter Variable', system-ui, -apple-system, sans-serif",
-  heading: "'Fraunces Variable', Georgia, 'Times New Roman', serif",
 }
 
 export { color, font }
