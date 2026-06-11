@@ -10,12 +10,36 @@ pdfjs.GlobalWorkerOptions.workerSrc = workerSrc
 
 const MAX_WIDTH = 850
 
+const CV_FILE = '/JAEKWON_IM_CV.pdf'
+const CV_DOWNLOAD_NAME = 'JAEKWON_IM_CV.pdf'
+
 const container = style({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'flex-start',
   width: '100%',
+})
+
+const downloadButton = style({
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: size.spacing.m,
+  marginBottom: size.spacing.l,
+  padding: `${size.spacing.m} ${size.spacing.l}`,
+  borderRadius: '10px',
+  border: '1px solid rgba(0, 0, 0, 0.15)',
+  backgroundColor: 'transparent',
+  color: '#272727',
+  fontFamily: 'Trebuchet MS',
+  fontSize: '16px',
+  fontWeight: 600,
+  textDecoration: 'none',
+  cursor: 'pointer',
+  transition: '0.2s',
+  ':hover': {
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+  },
 })
 
 const documentWrapper = style({
@@ -54,9 +78,12 @@ function CV() {
 
   return (
     <div className={`${container} CV`}>
+      <a className={downloadButton} href={CV_FILE} download={CV_DOWNLOAD_NAME}>
+        Download CV (PDF)
+      </a>
       <div ref={wrapperRef} className={documentWrapper}>
         <Document
-          file='/JAEKWON_IM_CV.pdf'
+          file={CV_FILE}
           onLoadSuccess={({ numPages }) => setNumPages(numPages)}
         >
           {Array.from({ length: numPages }, (_, index) => (
