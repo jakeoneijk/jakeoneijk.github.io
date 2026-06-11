@@ -16,10 +16,11 @@ const size = {
     l: '16px',
   },
   media: {
-    // Stack to a single column on tablets and phones to avoid horizontal overflow.
-    mobile: 'screen and (max-width: 900px)',
-    // Wide enough to viewport-center the body without colliding with the sidebar.
-    wide: 'screen and (min-width: 1560px)',
+    // Below this width the side-by-side layout can't fit a far-left sidebar plus
+    // a centered, full-width body, so we stack into a single centered column
+    // instead of shrinking the content. The threshold equals the minimum width
+    // the side-by-side layout needs: bodyWidth + 2*bioWidth + gaps + padding.
+    mobile: 'screen and (max-width: 1559px)',
   },
 }
 

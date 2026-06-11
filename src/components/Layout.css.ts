@@ -33,32 +33,31 @@ export const container = style({
   // Clip the outer box so the inner content pane owns the only scrollbar.
   overflow: 'hidden',
   display: 'grid',
-  // Medium widths: sidebar pinned left, content fills the remaining space.
-  gridTemplateColumns: `${size.section.bioWidth} minmax(0, 1fr)`,
+  // Two clean states only, no awkward in-between band:
+  //  - Wide (>= ~1560px): symmetric side tracks center the content in the
+  //    viewport while the sidebar stays pinned at the far-left of its track.
+  //    The `minmax(bioWidth, ...)` floor guarantees the two never collide.
+  //  - Narrow: the @media rule below stacks everything into one centered column.
+  // The breakpoint is set exactly where the side-by-side layout first fits, so
+  // the content never shrinks while empty space sits beside it.
+  gridTemplateColumns: `minmax(${size.section.bioWidth}, 1fr) minmax(0, ${size.section.bodyWidth}) minmax(${size.section.bioWidth}, 1fr)`,
   columnGap: size.spacing.xl,
   // Stretch cells to full height so the content column can host its own scroll.
   alignItems: 'stretch',
   padding: `${size.spacing.l} ${size.spacing.xl}`,
   '@media': {
     [size.media.mobile]: {
-      // Mobile: revert to normal document flow and full-page scroll.
+      // Narrow: single centered column, normal document flow and full-page scroll.
       height: 'auto',
       overflow: 'visible',
       gridTemplateColumns: '1fr',
       justifyItems: 'center',
     },
-    // Wide screens: equal flexible side tracks center the body in the viewport,
-    // while the sidebar stays at the left edge of its (now wide) left track.
-    [size.media.wide]: {
-      gridTemplateColumns: `minmax(0, 1fr) minmax(0, ${size.section.bodyWidth}) minmax(0, 1fr)`,
-    },
   },
 })
 
 export const main = style({
-  // Fill the remaining space, cap at the natural body width, and center within
-  // that space — so the body never shrinks while room is available, and stays
-  // centered (not stretched) on wide screens.
+  // Fill the content track and cap at the natural body width.
   justifySelf: 'center',
   display: 'flex',
   flexDirection: 'column',
