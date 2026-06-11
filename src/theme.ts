@@ -18,6 +18,8 @@ const size = {
   media: {
     // Stack to a single column on tablets and phones to avoid horizontal overflow.
     mobile: 'screen and (max-width: 900px)',
+    // Wide enough to viewport-center the body without colliding with the sidebar.
+    wide: 'screen and (min-width: 1560px)',
   },
 }
 

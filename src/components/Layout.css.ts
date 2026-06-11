@@ -9,30 +9,38 @@ globalStyle('*', {
 export const container = style({
   width: '100%',
   height: '100%',
-  display: 'flex',
-  flexDirection: 'row',
+  display: 'grid',
+  // Medium widths: sidebar pinned left, content fills the remaining space.
+  gridTemplateColumns: `${size.section.bioWidth} minmax(0, 1fr)`,
+  columnGap: size.spacing.xl,
   alignItems: 'start',
-  justifyContent: 'space-between',
   padding: `${size.spacing.l} ${size.spacing.xl}`,
   '@media': {
     [size.media.mobile]: {
-      flexDirection: 'column',
-      alignItems: 'center',
+      gridTemplateColumns: '1fr',
+      justifyItems: 'center',
+    },
+    // Wide screens: equal flexible side tracks center the body in the viewport,
+    // while the sidebar stays at the left edge of its (now wide) left track.
+    [size.media.wide]: {
+      gridTemplateColumns: `minmax(0, 1fr) minmax(0, ${size.section.bodyWidth}) minmax(0, 1fr)`,
     },
   },
 })
 
 export const main = style({
+  // Fill the remaining space, cap at the natural body width, and center within
+  // that space — so the body never shrinks while room is available, and stays
+  // centered (not stretched) on wide screens.
+  justifySelf: 'center',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  width: size.section.bodyWidth,
-  maxWidth: '100%',
+  width: '100%',
+  maxWidth: size.section.bodyWidth,
   minWidth: 0,
-  flexShrink: 1,
   '@media': {
     [size.media.mobile]: {
-      width: '100%',
       marginTop: size.spacing.xl,
     },
   },
@@ -89,14 +97,4 @@ export const pageArea = style({
   scrollbarColor: 'transparent transparent',
   '::-webkit-scrollbar-thumb': { backgroundColor: 'transparent' },
   '::-webkit-scrollbar-track': { backgroundColor: 'transparent' },
-})
-
-export const placeHolder = style({
-  width: size.section.bioWidth,
-  flexShrink: 0,
-  '@media': {
-    [size.media.mobile]: {
-      display: 'none',
-    },
-  },
 })
