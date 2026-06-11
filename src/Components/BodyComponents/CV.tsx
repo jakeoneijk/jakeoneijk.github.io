@@ -9,6 +9,9 @@ import size from '../../Property/Size'
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc
 
 const MAX_WIDTH = 850
+const MIN_SCALE = 1
+const MAX_SCALE = 3
+const SCALE_STEP = 0.25
 
 const CV_FILE = '/JAEKWON_IM_CV.pdf'
 const CV_DOWNLOAD_NAME = 'JAEKWON_IM_CV.pdf'
@@ -21,11 +24,21 @@ const container = style({
   width: '100%',
 })
 
-const downloadButton = style({
-  display: 'inline-flex',
+const controlBar = style({
+  display: 'flex',
   alignItems: 'center',
   gap: size.spacing.m,
   marginBottom: size.spacing.l,
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+})
+
+const controlButton = style({
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: size.spacing.m,
+  minWidth: '40px',
   padding: `${size.spacing.m} ${size.spacing.l}`,
   borderRadius: '10px',
   border: '1px solid rgba(0, 0, 0, 0.15)',
@@ -40,16 +53,35 @@ const downloadButton = style({
   ':hover': {
     backgroundColor: 'rgba(0, 0, 0, 0.1)',
   },
+  ':disabled': {
+    opacity: 0.4,
+    cursor: 'default',
+  },
 })
 
-const documentWrapper = style({
+const zoomLabel = style({
+  fontFamily: 'Trebuchet MS',
+  fontSize: '14px',
+  fontWeight: 400,
+  color: 'rgba(0, 0, 0, 0.5)',
+  minWidth: '48px',
+  textAlign: 'center',
+})
+
+const scrollArea = style({
   width: `${MAX_WIDTH}px`,
   maxWidth: '100%',
+  overflowX: 'auto',
   '@media': {
     [size.media.mobile]: {
       width: '100%',
     },
   },
+})
+
+const documentInner = style({
+  margin: '0 auto',
+  width: 'fit-content',
 })
 
 const pageWrapper = style({
@@ -58,16 +90,17 @@ const pageWrapper = style({
 })
 
 function CV() {
-  const wrapperRef = useRef<HTMLDivElement>(null)
+  const scrollRef = useRef<HTMLDivElement>(null)
   const [numPages, setNumPages] = useState<number>(0)
-  const [pageWidth, setPageWidth] = useState<number>(MAX_WIDTH)
+  const [baseWidth, setBaseWidth] = useState<number>(MAX_WIDTH)
+  const [scale, setScale] = useState<number>(1)
 
   useLayoutEffect(() => {
-    const element = wrapperRef.current
+    const element = scrollRef.current
     if (!element) return
 
     const updateWidth = () => {
-      setPageWidth(Math.min(element.clientWidth, MAX_WIDTH))
+      setBaseWidth(Math.min(element.clientWidth, MAX_WIDTH))
     }
 
     updateWidth()
@@ -76,27 +109,53 @@ function CV() {
     return () => observer.disconnect()
   }, [])
 
+  const zoomOut = () =>
+    setScale((value) => Math.max(MIN_SCALE, +(value - SCALE_STEP).toFixed(2)))
+  const zoomIn = () =>
+    setScale((value) => Math.min(MAX_SCALE, +(value + SCALE_STEP).toFixed(2)))
+
   return (
     <div className={`${container} CV`}>
-      <a className={downloadButton} href={CV_FILE} download={CV_DOWNLOAD_NAME}>
-        Download CV (PDF)
-      </a>
-      <div ref={wrapperRef} className={documentWrapper}>
-        <Document
-          file={CV_FILE}
-          onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+      <div className={controlBar}>
+        <a className={controlButton} href={CV_FILE} download={CV_DOWNLOAD_NAME}>
+          Download CV (PDF)
+        </a>
+        <button
+          className={controlButton}
+          onClick={zoomOut}
+          disabled={scale <= MIN_SCALE}
+          aria-label='Zoom out'
         >
-          {Array.from({ length: numPages }, (_, index) => (
-            <div key={`page_${index + 1}`} className={pageWrapper}>
-              <Page
-                pageNumber={index + 1}
-                width={pageWidth}
-                renderAnnotationLayer={true}
-                renderTextLayer={true}
-              />
-            </div>
-          ))}
-        </Document>
+          −
+        </button>
+        <span className={zoomLabel}>{Math.round(scale * 100)}%</span>
+        <button
+          className={controlButton}
+          onClick={zoomIn}
+          disabled={scale >= MAX_SCALE}
+          aria-label='Zoom in'
+        >
+          +
+        </button>
+      </div>
+      <div ref={scrollRef} className={scrollArea}>
+        <div className={documentInner}>
+          <Document
+            file={CV_FILE}
+            onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+          >
+            {Array.from({ length: numPages }, (_, index) => (
+              <div key={`page_${index + 1}`} className={pageWrapper}>
+                <Page
+                  pageNumber={index + 1}
+                  width={baseWidth * scale}
+                  renderAnnotationLayer={true}
+                  renderTextLayer={true}
+                />
+              </div>
+            ))}
+          </Document>
+        </div>
       </div>
     </div>
   )
