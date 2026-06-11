@@ -57,6 +57,7 @@ export const embedCard = style({
   width: '100%',
   maxWidth: '600px',
   aspectRatio: '16 / 9',
+  alignSelf: 'center',
   marginTop: size.spacing.m,
   borderRadius: size.radius.l,
   border: `1px solid ${color.border}`,
