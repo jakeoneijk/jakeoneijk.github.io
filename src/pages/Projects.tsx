@@ -1,10 +1,6 @@
 import { Text } from '@/components/Text'
-import projects from './Projects.json'
+import { projects, projectCategories } from '@/data/projects'
 import * as styles from './Projects.css'
-
-type ProjectType = 'Research' | 'Industry'
-
-const categories: ProjectType[] = ['Research', 'Industry']
 
 const renderAuthors = (authorString: string) => {
   const authors = authorString.split(', ')
@@ -19,7 +15,7 @@ const renderAuthors = (authorString: string) => {
 export const Projects = () => {
   return (
     <div className={styles.container}>
-      {categories.map((category) => (
+      {projectCategories.map((category) => (
         <div key={category} className={styles.projectContainer}>
           <div className={styles.categoryHeader}>
             <span className={styles.categoryLabel}>{category}</span>

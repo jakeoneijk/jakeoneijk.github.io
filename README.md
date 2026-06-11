@@ -28,6 +28,8 @@ src/
   config/
     navigation.ts       Nav items (single source of truth for the menu)
     links.ts            Social links + profile link data
+  data/
+    projects.ts         Typed research & industry project content
   components/
     Layout.tsx          App shell: Bio + nav + <Outlet/>
     Bio.tsx             Left-column profile + social links
@@ -36,7 +38,7 @@ src/
   pages/
     Home.tsx            Landing / about
     CV.tsx              PDF viewer with zoom + download
-    Projects.tsx        Research & industry list (data: Projects.json)
+    Projects.tsx        Research & industry list (data: src/data/projects.ts)
     *.css.ts            Colocated vanilla-extract styles per page
   test/
     setup.ts            Testing Library / jsdom setup
