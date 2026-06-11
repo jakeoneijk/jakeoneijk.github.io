@@ -48,14 +48,14 @@ export const role = style({
 })
 
 export const roleText = style({
-  fontFamily: font.family,
+  fontFamily: font.body,
   fontWeight: 600,
   fontSize: '16px',
   color: color.textStrong,
 })
 
 export const affiliationText = style({
-  fontFamily: font.family,
+  fontFamily: font.body,
   fontWeight: 400,
   fontSize: '14px',
   color: color.text,
@@ -86,8 +86,8 @@ export const socialIcon = style({
 })
 
 export const socialLabel = style({
-  fontFamily: font.family,
-  fontWeight: 600,
+  fontFamily: font.body,
+  fontWeight: 500,
   fontSize: '15px',
   color: color.textStrong,
 })

@@ -23,20 +23,21 @@ const size = {
 
 const color = {
   text: '#272727',
-  textStrong: '#000000',
+  textStrong: '#1a1a1a',
   textMuted: 'rgba(0, 0, 0, 0.5)',
-  link: '#0070f3',
+  accent: '#b5542b',
+  accentHover: '#8c3f1d',
   elevated: '#ffffff',
-  surface: '#f2f0ef',
   surfaceSoft: 'rgba(0, 0, 0, 0.04)',
   hover: 'rgba(0, 0, 0, 0.1)',
-  border: 'rgba(0, 0, 0, 0.15)',
+  border: 'rgba(0, 0, 0, 0.12)',
   shadow: 'rgba(0, 0, 0, 0.15)',
   shadowSoft: 'rgba(0, 0, 0, 0.1)',
 }
 
 const font = {
-  family: "'Trebuchet MS', sans-serif",
+  body: "'Inter Variable', system-ui, -apple-system, sans-serif",
+  heading: "'Fraunces Variable', Georgia, 'Times New Roman', serif",
 }
 
 export { color, font }

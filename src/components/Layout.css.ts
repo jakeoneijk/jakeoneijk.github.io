@@ -57,9 +57,9 @@ export const navItem = style({
   justifyContent: 'center',
   padding: `${size.spacing.m} ${size.spacing.l}`,
   borderRadius: '10px',
-  fontFamily: font.family,
+  fontFamily: font.body,
   fontSize: '16px',
-  fontWeight: 600,
+  fontWeight: 500,
   letterSpacing: '0.01em',
   color: color.textMuted,
   textDecoration: 'none',
@@ -69,7 +69,7 @@ export const navItem = style({
     color: color.text,
   },
   ':focus-visible': {
-    outline: `2px solid ${color.link}`,
+    outline: `2px solid ${color.accent}`,
     outlineOffset: '2px',
   },
 })

@@ -1,9 +1,6 @@
 import { style } from '@vanilla-extract/css'
 
-import size, { color } from '../theme'
-
-const IFRAME_HEIGHT = 500
-const IFRAME_SCALE = 0.7
+import size, { color, font } from '../theme'
 
 export const container = style({
   width: size.section.bodyWidth,
@@ -20,25 +17,35 @@ export const container = style({
 export const projectContainer = style({
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'left',
+  alignItems: 'flex-start',
   justifyContent: 'center',
   width: '100%',
 })
 
-export const categoryContainer = style({
-  padding: size.spacing.m,
-  marginBottom: size.spacing.ml,
-  background: color.surface,
+export const categoryHeader = style({
+  marginTop: size.spacing.l,
+  marginBottom: size.spacing.l,
+  paddingBottom: size.spacing.m,
+  borderBottom: `1px solid ${color.border}`,
 })
 
-export const iframeContainer = style({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'flex-start',
-  width: '100%',
-  height: IFRAME_HEIGHT,
-  marginBottom: -1 * (IFRAME_HEIGHT * (1 - IFRAME_SCALE)),
+export const projectTitle = style({
+  margin: 0,
+  fontFamily: font.body,
+  fontSize: '19px',
+  fontWeight: 600,
+  lineHeight: 1.35,
+  letterSpacing: '-0.01em',
+  color: color.textStrong,
+})
+
+export const categoryLabel = style({
+  fontFamily: font.body,
+  fontSize: '13px',
+  fontWeight: 600,
+  textTransform: 'uppercase',
+  letterSpacing: '0.12em',
+  color: color.textMuted,
 })
 
 export const spacingDiv = style({
@@ -46,13 +53,20 @@ export const spacingDiv = style({
   height: size.spacing.xl2,
 })
 
-export const iframeClass = style({
-  width: '130%',
-  height: '100%',
-  transform: `scale(${IFRAME_SCALE})`,
-  transformOrigin: 'top',
+export const embedCard = style({
+  width: '100%',
+  height: '460px',
+  marginTop: size.spacing.m,
   borderRadius: size.radius.l,
-  boxShadow: `0 6px 20px ${color.shadowSoft}`,
   border: `1px solid ${color.border}`,
-  backgroundColor: '#fafafa',
+  boxShadow: `0 6px 20px ${color.shadowSoft}`,
+  backgroundColor: color.elevated,
+  overflow: 'hidden',
+})
+
+export const embedFrame = style({
+  display: 'block',
+  width: '100%',
+  height: '100%',
+  border: 'none',
 })

@@ -21,14 +21,12 @@ export const Projects = () => {
     <div className={styles.container}>
       {categories.map((category) => (
         <div key={category} className={styles.projectContainer}>
-          <div className={styles.categoryContainer}>
-            <Text variant='description'>
-              <strong>{category}</strong>
-            </Text>
+          <div className={styles.categoryHeader}>
+            <span className={styles.categoryLabel}>{category}</span>
           </div>
           {projects[category].map((project, index) => (
             <div key={index} className={styles.projectContainer}>
-              <Text variant='h2'>{project.title}</Text>
+              <h2 className={styles.projectTitle}>{project.title}</h2>
               <div>
                 <Text>{renderAuthors(project.author)}</Text>
               </div>
@@ -50,9 +48,9 @@ export const Projects = () => {
                 ))}
               </ul>
               {project.embLink && (
-                <div className={styles.iframeContainer}>
+                <div className={styles.embedCard}>
                   <iframe
-                    className={styles.iframeClass}
+                    className={styles.embedFrame}
                     src={project.embLink}
                     title={project.title}
                   />

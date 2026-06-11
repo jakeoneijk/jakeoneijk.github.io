@@ -12,6 +12,8 @@ Computing Lab). Built with Vite, React, TypeScript, and
   route and lazily code-split pages
 - **vanilla-extract** — zero-runtime, type-safe CSS-in-TS (styles live in
   colocated `*.css.ts` files)
+- **Fraunces + Inter** (self-hosted variable fonts via `@fontsource-variable`) —
+  serif headings, sans-serif body
 - **react-pdf** — renders the CV PDF inline
 - **Vitest + Testing Library** — unit tests
 - **ESLint (flat config) + Prettier** — linting and formatting

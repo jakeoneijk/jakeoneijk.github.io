@@ -32,9 +32,9 @@ export const controlButton = style({
   border: `1px solid ${color.border}`,
   backgroundColor: 'transparent',
   color: color.text,
-  fontFamily: font.family,
-  fontSize: '16px',
-  fontWeight: 600,
+  fontFamily: font.body,
+  fontSize: '15px',
+  fontWeight: 500,
   textDecoration: 'none',
   cursor: 'pointer',
   transition: '0.2s',
@@ -48,7 +48,7 @@ export const controlButton = style({
 })
 
 export const zoomLabel = style({
-  fontFamily: font.family,
+  fontFamily: font.body,
   fontSize: '14px',
   fontWeight: 400,
   color: color.textMuted,

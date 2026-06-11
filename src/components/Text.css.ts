@@ -2,22 +2,40 @@ import { style, styleVariants } from '@vanilla-extract/css'
 
 import { color, font } from '../theme'
 
-export const text = style({
-  fontFamily: font.family,
+const text = style({
+  fontFamily: font.body,
   fontStyle: 'normal',
   color: color.text,
 })
 
 export const textVariants = styleVariants({
-  default: { fontSize: '16px', fontWeight: 400 },
-  h1: { fontSize: '40px', fontWeight: 600 },
-  h2: { fontSize: '28px', fontWeight: 600 },
-  description: { fontSize: '14px', fontWeight: 400 },
-  subDescription: { fontSize: '14px', fontWeight: 400, color: color.textMuted },
+  default: { fontSize: '16px', fontWeight: 400, lineHeight: 1.6 },
+  h1: {
+    fontFamily: font.heading,
+    fontSize: '42px',
+    fontWeight: 600,
+    lineHeight: 1.1,
+    letterSpacing: '-0.01em',
+  },
+  description: { fontSize: '15px', fontWeight: 400, lineHeight: 1.7 },
+  subDescription: {
+    fontSize: '14px',
+    fontWeight: 400,
+    lineHeight: 1.6,
+    color: color.textMuted,
+  },
 })
 
-export const linkStyle = style({
-  color: color.link,
+const linkStyle = style({
+  color: color.accent,
   cursor: 'pointer',
   textDecoration: 'none',
+  textUnderlineOffset: '2px',
+  transition: 'color 0.15s',
+  ':hover': {
+    color: color.accentHover,
+    textDecoration: 'underline',
+  },
 })
+
+export { text, linkStyle }
