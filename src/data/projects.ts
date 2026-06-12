@@ -73,7 +73,7 @@ export const projects: Record<ProjectCategory, Project[]> = {
       author: 'AudAi (Co-founder & AI / SW Engineer)',
       note: 'May 2023 - Jul 2025',
       link: 'https://voxfactory.app/',
-      embLink: 'https://www.youtube.com/embed/83V6FmmoOoU',
+      embLink: 'https://www.youtube.com/embed/-CMKNlhh0WQ?si=uxZ2ONpFDUXtblp8',
       bulletPoints: [
         'Research on neural vocoders and singing voice synthesis.',
         'Product development of Vox Factory using SolidJS.',

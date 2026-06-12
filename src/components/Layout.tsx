@@ -1,10 +1,12 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
 
 import { Bio } from '@/components/Bio'
 import { navItems } from '@/config/navigation'
 import * as styles from './Layout.css'
 
 export const Layout = () => {
+  const location = useLocation()
+
   return (
     <div className={styles.container}>
       <div className={styles.inner}>
@@ -27,7 +29,9 @@ export const Layout = () => {
             ))}
           </nav>
           <div className={styles.pageArea}>
-            <Outlet />
+            <div key={location.pathname} className={styles.pageTransition}>
+              <Outlet />
+            </div>
           </div>
         </div>
       </div>

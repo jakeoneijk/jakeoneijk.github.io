@@ -16,12 +16,12 @@ export const Projects = () => {
   return (
     <div className={styles.container}>
       {projectCategories.map((category) => (
-        <div key={category} className={styles.projectContainer}>
+        <div key={category} className={styles.categoryGroup}>
           <div className={styles.categoryHeader}>
             <span className={styles.categoryLabel}>{category}</span>
           </div>
           {projects[category].map((project, index) => (
-            <div key={index} className={styles.projectContainer}>
+            <div key={index} className={styles.projectItem}>
               <h2 className={styles.projectTitle}>{project.title}</h2>
               <div>
                 <Text>{renderAuthors(project.author)}</Text>
@@ -36,7 +36,7 @@ export const Projects = () => {
                   </Text>
                 </div>
               )}
-              <ul style={!project.embLink ? { marginBottom: '0px' } : {}}>
+              <ul className={styles.bulletList}>
                 {project.bulletPoints.map((point, pointIndex) => (
                   <li key={pointIndex}>
                     <Text variant='description'>{point}</Text>
@@ -52,7 +52,6 @@ export const Projects = () => {
                   />
                 </div>
               )}
-              <div className={styles.spacingDiv} />
             </div>
           ))}
         </div>

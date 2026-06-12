@@ -1,6 +1,11 @@
-import { globalStyle, style } from '@vanilla-extract/css'
+import { globalStyle, keyframes, style } from '@vanilla-extract/css'
 
 import size, { color, font } from '../theme'
+
+const fadeInUp = keyframes({
+  from: { opacity: 0, transform: 'translateY(8px)' },
+  to: { opacity: 1, transform: 'translateY(0)' },
+})
 
 globalStyle('*', {
   boxSizing: 'border-box',
@@ -66,8 +71,10 @@ export const inner = style({
 })
 
 export const main = style({
-  // Fill the content track and cap at the natural body width.
-  justifySelf: 'center',
+  // Left-align the body in its track (capped at bodyWidth) so the Bio↔content
+  // gap stays a consistent columnGap at every width; extra space goes to the
+  // right, à la Tailwind docs.
+  justifySelf: 'start',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -146,6 +153,18 @@ export const pageArea = style({
       flex: 'none',
       minHeight: 'auto',
       overflowY: 'visible',
+    },
+  },
+})
+
+// Gentle fade/rise when navigating between pages. Replays on route change via a
+// keyed wrapper. Disabled for users who prefer reduced motion.
+export const pageTransition = style({
+  width: '100%',
+  animation: `${fadeInUp} 0.28s ease both`,
+  '@media': {
+    '(prefers-reduced-motion: reduce)': {
+      animation: 'none',
     },
   },
 })

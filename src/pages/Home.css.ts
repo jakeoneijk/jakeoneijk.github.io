@@ -11,7 +11,7 @@ export const container = style({
 })
 
 export const image = style({
-  width: '700px',
+  width: '600px',
   maxWidth: '100%',
 })
 
