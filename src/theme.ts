@@ -38,6 +38,7 @@ const color = {
   surfaceSoft: 'rgba(0, 0, 0, 0.04)',
   hover: 'rgba(0, 0, 0, 0.1)',
   border: 'rgba(0, 0, 0, 0.12)',
+  borderStrong: 'rgba(0, 0, 0, 0.28)',
   shadow: 'rgba(0, 0, 0, 0.15)',
   shadowSoft: 'rgba(0, 0, 0, 0.1)',
 }
