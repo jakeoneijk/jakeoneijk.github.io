@@ -4,7 +4,7 @@ import { LuAudioLines, LuDog, LuLayers, LuMusic, LuSpeech } from 'react-icons/lu
 
 import { Text } from '@/components/Text'
 import { profileLinks } from '@/data/links'
-import { researchInterests, type InterestIcon } from '@/data/profile'
+import { notice, researchInterests, type InterestIcon } from '@/data/profile'
 import * as styles from './Home.css'
 
 const interestIcons: Record<InterestIcon, IconType> = {
@@ -18,7 +18,8 @@ const interestIcons: Record<InterestIcon, IconType> = {
 export const Home = () => {
   return (
     <div className={styles.container}>
-      <img className={styles.image} src='/Home.png' alt='profile' />
+      <img className={styles.image} src='/images/home.png' alt='profile' />
+      {notice.show && <div className={styles.notice}>{notice.text}</div>}
       <div className={styles.interests}>
         <span className={styles.interestsLabel}>Research Interests</span>
         <div className={styles.interestsList}>

@@ -14,7 +14,7 @@ const MIN_SCALE = 1
 const MAX_SCALE = 3
 const SCALE_STEP = 0.25
 
-const CV_FILE = '/JAEKWON_IM_CV.pdf'
+const CV_FILE = '/documents/JAEKWON_IM_CV.pdf'
 const CV_DOWNLOAD_NAME = 'JAEKWON_IM_CV.pdf'
 
 export const CV = () => {

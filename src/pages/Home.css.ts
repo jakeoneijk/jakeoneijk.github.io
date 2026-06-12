@@ -21,6 +21,18 @@ export const textContainer = style({
   marginTop: `calc(${size.spacing.s} + ${size.spacing.l})`,
 })
 
+export const notice = style({
+  width: size.section.bodyWidth,
+  maxWidth: '100%',
+  marginTop: size.spacing.l,
+  fontFamily: font.body,
+  fontSize: '17px',
+  fontWeight: 600,
+  letterSpacing: '0.01em',
+  color: color.accent,
+  textAlign: 'center',
+})
+
 export const interests = style({
   width: size.section.bodyWidth,
   maxWidth: '100%',

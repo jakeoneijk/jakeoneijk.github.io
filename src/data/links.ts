@@ -7,36 +7,36 @@ export type SocialLink = {
 
 export const socialLinks: SocialLink[] = [
   {
-    icon: '/EMail.png',
+    icon: '/icons/email.png',
     alt: 'email',
     label: 'jakeoneijk@kaist.ac.kr',
   },
   {
-    icon: '/GoogleScholar.png',
+    icon: '/icons/google-scholar.png',
     alt: 'google scholar',
     label: 'Google Scholar',
     href: 'https://scholar.google.com/citations?user=VNDwfVkAAAAJ',
   },
   {
-    icon: '/SNSICon/linkedin.png',
+    icon: '/icons/linkedin.png',
     alt: 'linkedin',
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/jaekwon-im-995b3b170',
   },
   {
-    icon: '/SNSICon/twitter.png',
+    icon: '/icons/twitter.png',
     alt: 'twitter',
     label: 'Twitter',
     href: 'https://twitter.com/osalooloo',
   },
   {
-    icon: '/GitHubIcon.png',
+    icon: '/icons/github.png',
     alt: 'github',
     label: 'GitHub',
     href: 'https://github.com/jakeoneijk',
   },
   {
-    icon: '/Youtube.png',
+    icon: '/icons/youtube.png',
     alt: 'youtube',
     label: 'YouTube (My music)',
     href: 'https://www.youtube.com/channel/UCR5ICei5K6hmbzeWNz9JHuA',
@@ -46,6 +46,6 @@ export const socialLinks: SocialLink[] = [
 export const profileLinks = {
   macLab: 'https://mac.kaist.ac.kr/',
   juhan: 'https://mac.kaist.ac.kr/~juhan/',
-  audAI: 'https://youtu.be/83V6FmmoOoU?si=uHEcz92XOnynRnEb',
+  audAI: 'https://youtu.be/-CMKNlhh0WQ?si=YTlbZr7OsJhGnxH8',
   music: 'https://www.youtube.com/channel/UCR5ICei5K6hmbzeWNz9JHuA',
 }

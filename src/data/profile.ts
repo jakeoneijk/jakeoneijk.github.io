@@ -2,7 +2,13 @@ export const profile = {
   name: 'Jaekwon Im',
   role: 'Researcher & Developer',
   affiliation: 'PhD Student | MAC Lab | GSCT, KAIST',
-  image: '/Profile.png',
+  image: '/images/profile.png',
+}
+
+/** Toggle `show` to display an announcement banner on the Home page. */
+export const notice = {
+  show: false,
+  text: '🔥 Plan to enter the job market at 2027 March! 🔥',
 }
 
 export type InterestIcon = 'audio' | 'speech' | 'music' | 'foley' | 'multimodal'
