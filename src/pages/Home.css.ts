@@ -11,12 +11,12 @@ export const container = style({
 })
 
 export const image = style({
-  width: '520px',
+  width: '700px',
   maxWidth: '100%',
 })
 
 export const textContainer = style({
-  width: '520px',
+  width: size.section.bodyWidth,
   maxWidth: '100%',
   marginTop: `calc(${size.spacing.s} + ${size.spacing.l})`,
 })

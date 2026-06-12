@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css'
 
 import size, { color, font } from '../theme'
 
-export const MAX_WIDTH = 850
+export const MAX_WIDTH = parseInt(size.section.bodyWidth, 10)
 
 export const container = style({
   display: 'flex',

@@ -32,17 +32,10 @@ export const container = style({
   height: '100%',
   // Clip the outer box so the inner content pane owns the only scrollbar.
   overflow: 'hidden',
-  display: 'grid',
-  // Two clean states only, no awkward in-between band:
-  //  - Wide (>= ~1560px): symmetric side tracks center the content in the
-  //    viewport while the sidebar stays pinned at the far-left of its track.
-  //    The `minmax(bioWidth, ...)` floor guarantees the two never collide.
-  //  - Narrow: the @media rule below stacks everything into one centered column.
-  // The breakpoint is set exactly where the side-by-side layout first fits, so
-  // the content never shrinks while empty space sits beside it.
-  gridTemplateColumns: `minmax(${size.section.bioWidth}, 1fr) minmax(0, ${size.section.bodyWidth}) minmax(${size.section.bioWidth}, 1fr)`,
-  columnGap: size.spacing.xl,
-  // Stretch cells to full height so the content column can host its own scroll.
+  // Center the capped shell; on ultra-wide screens this yields balanced margins
+  // (Tailwind-docs style) rather than stretching the layout.
+  display: 'flex',
+  justifyContent: 'center',
   alignItems: 'stretch',
   padding: `${size.spacing.l} ${size.spacing.xl}`,
   '@media': {
@@ -50,6 +43,22 @@ export const container = style({
       // Narrow: single centered column, normal document flow and full-page scroll.
       height: 'auto',
       overflow: 'visible',
+    },
+  },
+})
+
+export const inner = style({
+  display: 'grid',
+  // Bio pinned at its fixed width on the left; content fills the space beside it.
+  gridTemplateColumns: `${size.section.bioWidth} minmax(0, 1fr)`,
+  columnGap: size.spacing.xl,
+  // Stretch cells to full height so the content column can host its own scroll.
+  alignItems: 'stretch',
+  width: '100%',
+  maxWidth: size.section.shellWidth,
+  minHeight: 0,
+  '@media': {
+    [size.media.mobile]: {
       gridTemplateColumns: '1fr',
       justifyItems: 'center',
     },

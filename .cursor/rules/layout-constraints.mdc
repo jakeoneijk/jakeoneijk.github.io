@@ -1,0 +1,48 @@
+---
+description: Responsive layout model for the Bio sidebar + content area
+globs: src/components/Layout.css.ts,src/components/Layout.tsx,src/theme.ts
+alwaysApply: false
+---
+
+# Layout Model — Tailwind-docs style (Camp 2)
+
+The layout follows the Tailwind CSS docs pattern: a persistent left Bio sidebar
+with content filling the space beside it, inside a capped, centered shell.
+
+## Requirements (verify all after any change)
+
+1. **No "shrunk with space".** Content must never get narrower while empty space
+   sits beside it. It fills the space next to the Bio and only narrows when the
+   window itself is narrow.
+2. **Bio pinned far-left.** The Bio stays at the left edge of the shell — never
+   floating inward or centered as a block.
+3. **Graceful at every width**, including ultra-wide: the whole shell is capped
+   (`size.section.shellWidth`) and centered, so it gets balanced margins instead
+   of stretching. Below `size.media.mobile` it stacks into one centered column.
+
+NOTE: We intentionally do NOT require the content to be perfectly viewport-
+centered. With a left sidebar that's geometrically impossible without either
+shrinking content (breaks #1) or unpinning the Bio (breaks #2). Like Tailwind
+docs, content sits beside the Bio, visually balanced by it.
+
+## Structure
+
+```
+container (app-shell, full height, centers the shell)
+  inner   (grid: `${bioWidth} minmax(0, 1fr)`, max-width: shellWidth)
+    Bio   (fixed bioWidth, left)
+    main  (content, max-width: bodyWidth, centered in its track)
+```
+
+- **>= shellWidth:** shell centers with equal margins; Bio at the left of it.
+- **mobile..shellWidth:** shell fills width; Bio left, content fills the rest.
+- **< mobile breakpoint:** single centered column, Bio on top.
+
+Do NOT reintroduce: a symmetric 3-col grid that reserves mirror space (causes
+"shrunk with space"), or a tightly-capped block that drifts the Bio inward on
+normal screens. Tune feel via `bioWidth` / `bodyWidth` / `shellWidth` in `theme.ts`.
+
+## Also preserve
+
+- App-shell scroll: page is locked to viewport height; only `pageArea` scrolls
+  (Bio + nav stay fixed). Mobile reverts to normal document scroll.

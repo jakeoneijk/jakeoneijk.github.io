@@ -1,7 +1,12 @@
 const size = {
   section: {
     bioWidth: '290px',
-    bodyWidth: '850px',
+    // Shared content width for Home / CV / Projects so pages stay in sync.
+    bodyWidth: '950px',
+    // Overall cap for the [Bio + content] shell (à la Tailwind docs `max-w-8xl`).
+    // On wider screens the whole layout centers with balanced margins instead of
+    // stretching, keeping the Bio at the left edge of this centered block.
+    shellWidth: '1440px',
   },
   spacing: {
     s: '4px',
@@ -16,11 +21,10 @@ const size = {
     l: '16px',
   },
   media: {
-    // Below this width the side-by-side layout can't fit a far-left sidebar plus
-    // a centered, full-width body, so we stack into a single centered column
-    // instead of shrinking the content. The threshold equals the minimum width
-    // the side-by-side layout needs: bodyWidth + 2*bioWidth + gaps + padding.
-    mobile: 'screen and (max-width: 1559px)',
+    // Stack into a single column below this width (mirrors Tailwind docs' `lg`
+    // breakpoint, where the sidebar drops away). Above it, the Bio sits beside
+    // the content.
+    mobile: 'screen and (max-width: 1023px)',
   },
 }
 
