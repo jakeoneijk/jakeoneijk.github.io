@@ -3,6 +3,8 @@ export type SocialLink = {
   alt: string
   label: string
   href?: string
+  // When set, clicking copies this text to the clipboard instead of navigating.
+  copyText?: string
 }
 
 export const socialLinks: SocialLink[] = [
@@ -10,6 +12,7 @@ export const socialLinks: SocialLink[] = [
     icon: '/icons/email.png',
     alt: 'email',
     label: 'jakeoneijk@kaist.ac.kr',
+    copyText: 'jakeoneijk@kaist.ac.kr',
   },
   {
     icon: '/icons/google-scholar.png',

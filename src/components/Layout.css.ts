@@ -88,6 +88,10 @@ export const main = style({
   minHeight: 0,
   '@media': {
     [size.media.mobile]: {
+      // Center the (capped) content column when stacked, so at widths between
+      // bodyWidth and the mobile cutoff it stays viewport-centered instead of
+      // pinning left and tilting the nav off-center.
+      justifySelf: 'center',
       height: 'auto',
       marginTop: size.spacing.xl,
     },

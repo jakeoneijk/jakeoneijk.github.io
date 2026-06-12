@@ -1,6 +1,11 @@
-import { style } from '@vanilla-extract/css'
+import { keyframes, style } from '@vanilla-extract/css'
 
 import size, { color, font } from '../theme'
+
+const toastIn = keyframes({
+  from: { opacity: 0, transform: 'translate(-50%, -8px)' },
+  to: { opacity: 1, transform: 'translate(-50%, 0)' },
+})
 
 export const container = style({
   display: 'flex',
@@ -19,8 +24,14 @@ export const name = style({
 export const content = style({
   marginLeft: size.spacing.m,
   '@media': {
-    // Centered Bio when stacked — drop the left margin so it's truly symmetric.
-    [size.media.mobile]: { marginLeft: 0 },
+    // Stacked Bio: profile on top, then a centered horizontal row of icon-only
+    // links beneath it.
+    [size.media.mobile]: {
+      marginLeft: 0,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
   },
 })
 
@@ -67,6 +78,17 @@ export const affiliationText = style({
 
 export const socialList = style({
   marginTop: size.spacing.ml,
+  '@media': {
+    // Below the profile: a centered horizontal row of icon-only links.
+    [size.media.mobile]: {
+      marginTop: size.spacing.l,
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      gap: size.spacing.m,
+    },
+  },
 })
 
 export const socialRow = style({
@@ -74,6 +96,10 @@ export const socialRow = style({
   flexDirection: 'row',
   alignItems: 'center',
   marginTop: size.spacing.s,
+  '@media': {
+    // Spacing is handled by the list's gap when stacked.
+    [size.media.mobile]: { marginTop: 0 },
+  },
 })
 
 export const socialLink = style({
@@ -81,12 +107,31 @@ export const socialLink = style({
   alignItems: 'center',
   textDecoration: 'none',
   color: 'inherit',
+  // Let a <button> (copy action) render identically to the <a> links.
+  margin: 0,
+  padding: 0,
+  border: 'none',
+  background: 'none',
+  fontFamily: 'inherit',
+  cursor: 'pointer',
+  '@media': {
+    // Larger hit area for touch.
+    [size.media.mobile]: { padding: size.spacing.s },
+  },
 })
 
 export const socialIcon = style({
   height: '17px',
   marginLeft: size.spacing.s,
   marginRight: size.spacing.m,
+  '@media': {
+    // Icon-only on mobile: enlarge slightly and drop label-related margins.
+    [size.media.mobile]: {
+      height: '22px',
+      marginLeft: 0,
+      marginRight: 0,
+    },
+  },
 })
 
 export const socialLabel = style({
@@ -94,4 +139,39 @@ export const socialLabel = style({
   fontWeight: 500,
   fontSize: '15px',
   color: color.textStrong,
+  '@media': {
+    // Icon-only links when stacked; the name stays accessible via alt/title.
+    [size.media.mobile]: { display: 'none' },
+  },
+})
+
+// Fixed, viewport-centered confirmation toast — identical on every device.
+export const toast = style({
+  position: 'fixed',
+  top: size.spacing.xl,
+  left: '50%',
+  transform: 'translateX(-50%)',
+  zIndex: 1000,
+  display: 'flex',
+  alignItems: 'center',
+  gap: size.spacing.m,
+  padding: `${size.spacing.m} ${size.spacing.l}`,
+  borderRadius: size.radius.s,
+  backgroundColor: color.textStrong,
+  color: color.elevated,
+  fontFamily: font.body,
+  fontSize: '14px',
+  fontWeight: 500,
+  boxShadow: `0 6px 20px ${color.shadow}`,
+  pointerEvents: 'none',
+  animation: `${toastIn} 0.2s ease both`,
+  '@media': {
+    '(prefers-reduced-motion: reduce)': { animation: 'none' },
+  },
+})
+
+export const toastIcon = style({
+  fontSize: '15px',
+  fontWeight: 700,
+  lineHeight: 1,
 })
