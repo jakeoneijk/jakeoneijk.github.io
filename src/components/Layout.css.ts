@@ -48,6 +48,8 @@ export const container = style({
       // Narrow: single centered column, normal document flow and full-page scroll.
       height: 'auto',
       overflow: 'visible',
+      // Tighter gutters so small screens get more reading width.
+      padding: size.spacing.l,
     },
   },
 })

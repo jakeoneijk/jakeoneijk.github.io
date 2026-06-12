@@ -18,6 +18,10 @@ export const name = style({
 
 export const content = style({
   marginLeft: size.spacing.m,
+  '@media': {
+    // Centered Bio when stacked — drop the left margin so it's truly symmetric.
+    [size.media.mobile]: { marginLeft: 0 },
+  },
 })
 
 export const profile = style({
