@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import { Text } from '@/components/Text'
 import { socialLinks } from '@/data/links'
-import { profile } from '@/data/profile'
+import { positions, profile } from '@/data/profile'
 import * as styles from './Bio.css'
 
 export const Bio = () => {
@@ -40,15 +40,24 @@ export const Bio = () => {
             src={profile.image}
             alt='profile'
           />
-          <div className={styles.role}>
-            <div className={styles.socialRow}>
-              <span className={styles.roleText}>{profile.role}</span>
-            </div>
-            <div className={styles.socialRow}>
-              <span className={styles.affiliationText}>
-                {profile.affiliation}
-              </span>
-            </div>
+          <span className={styles.tagline}>{profile.tagline}</span>
+          <div className={styles.positions}>
+            {positions.map(({ role, affiliation, affiliationIcon }) => (
+              <div key={`${role}-${affiliation}`} className={styles.position}>
+                {affiliationIcon && (
+                  <img
+                    className={styles.affiliationIcon}
+                    src={affiliationIcon}
+                    alt=''
+                  />
+                )}
+                <span className={styles.positionText}>
+                  <span className={styles.positionRole}>{role}</span>
+                  <span className={styles.positionSep}>·</span>
+                  {affiliation}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
         <div className={styles.socialList}>

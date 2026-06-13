@@ -51,37 +51,70 @@ export const profileImage = style({
   marginBottom: '10px',
 })
 
-export const role = style({
-  '@media': {
-    [size.media.mobile]: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      marginBottom: size.spacing.l,
-    },
-  },
-})
-
-export const roleText = style({
+// Short self-description headline; styled like the former role text.
+export const tagline = style({
+  display: 'block',
   fontFamily: font.body,
   fontWeight: 600,
   fontSize: '16px',
   color: color.textStrong,
 })
 
-export const affiliationText = style({
+// Wraps all position lines with even spacing between them.
+export const positions = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: size.spacing.s,
+  marginTop: size.spacing.s,
+  '@media': {
+    [size.media.mobile]: {
+      alignItems: 'center',
+      marginBottom: size.spacing.l,
+    },
+  },
+})
+
+// One line: [logo] role · affiliation.
+export const position = style({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  gap: size.spacing.s,
+})
+
+export const positionText = style({
   fontFamily: font.body,
   fontWeight: 400,
   fontSize: '14px',
   color: color.text,
 })
 
+export const positionRole = style({
+  fontWeight: 500,
+  color: color.textStrong,
+})
+
+export const positionSep = style({
+  margin: `0 ${size.spacing.s}`,
+  color: color.textMuted,
+})
+
+export const affiliationIcon = style({
+  width: '28px',
+  height: '28px',
+  // Keep each logo's aspect ratio inside the fixed 32×32 box (no stretching).
+  objectFit: 'contain',
+  flexShrink: 0,
+})
+
 export const socialList = style({
-  marginTop: size.spacing.ml,
+  // Separate the contact links from the (tightly-stacked) position lines so they
+  // read as their own group (≈24px).
+  marginTop: `calc(${size.spacing.l} + ${size.spacing.m})`,
   '@media': {
     // Below the profile: a centered horizontal row of icon-only links.
     [size.media.mobile]: {
-      marginTop: size.spacing.l,
+      marginTop: size.spacing.s,
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'wrap',

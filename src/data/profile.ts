@@ -1,9 +1,29 @@
 export const profile = {
   name: 'Jaekwon Im',
-  role: 'PhD Candidate',
-  affiliation: 'Music and Audio Computing Lab, KAIST',
+  tagline: 'Generative Audio Researcher',
   image: '/images/profile.png',
 }
+
+export type Position = {
+  role: string
+  affiliation: string
+  /** Optional small logo shown before the affiliation (e.g. an institution mark). */
+  affiliationIcon?: string
+}
+
+/** List as many roles/affiliations as needed; each renders as its own block. */
+export const positions: Position[] = [
+  {
+    role: 'PhD Candidate',
+    affiliation: 'KAIST',
+    affiliationIcon: '/icons/institution/kaist.png',
+  },
+  {
+    role: 'Research Intern',
+    affiliation: 'NVIDIA',
+    affiliationIcon: '/icons/institution/nvidia.png',
+  },
+]
 
 /** Toggle `show` to display an announcement banner on the Home page. */
 export const notice = {
