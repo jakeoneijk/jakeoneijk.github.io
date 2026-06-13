@@ -17,6 +17,19 @@ export const projects: Record<ProjectCategory, Project[]> = {
   Research: [
     {
       title:
+        'PF-D2M: A Pose-free Diffusion Model for Universal Dance-to-Music Generation',
+      author: 'Jaekwon Im, Natalia Polouliakh, Taketo Akama',
+      note: 'Proceedings of the 27th INTERSPEECH Conference (Interspeech), 2026',
+      link: 'https://jakeoneijk.github.io/pfd2m_project',
+      embLink: 'https://www.youtube.com/embed/8ESg45dEBSs?si=qMQdpQY5NmJbGms8',
+      bulletPoints: [
+        'A dance-to-music generation model that supports general dance videos, including multiple dancers and non-human dancers.',
+        'Introduces a progressive training strategy that mitigates overfitting under data scarcity and improves the model’s generative capability.',
+        'Uses visual features extracted from video instead of relying on pose or motion features.',
+      ],
+    },
+    {
+      title:
         'SAGA-SR: Semantically and Acoustically Guided Audio Super-Resolution',
       author: 'Jaekwon Im, Juhan Nam',
       note: 'Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2026',
