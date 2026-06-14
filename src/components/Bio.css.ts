@@ -60,26 +60,26 @@ export const tagline = style({
   color: color.textStrong,
 })
 
-// Wraps all position lines with even spacing between them.
+// Aligns every position into shared columns: [logo] role · affiliation.
 export const positions = style({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: size.spacing.s,
+  display: 'grid',
+  gridTemplateColumns: 'auto auto auto auto',
+  alignItems: 'center',
+  columnGap: size.spacing.s,
+  rowGap: size.spacing.s,
   marginTop: size.spacing.s,
+  width: 'fit-content',
   '@media': {
     [size.media.mobile]: {
-      alignItems: 'center',
+      justifyContent: 'center',
       marginBottom: size.spacing.l,
     },
   },
 })
 
-// One line: [logo] role · affiliation.
+// Flatten each row's cells into the parent grid so columns align across rows.
 export const position = style({
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  gap: size.spacing.s,
+  display: 'contents',
 })
 
 export const positionText = style({
@@ -95,7 +95,6 @@ export const positionRole = style({
 })
 
 export const positionSep = style({
-  margin: `0 ${size.spacing.s}`,
   color: color.textMuted,
 })
 

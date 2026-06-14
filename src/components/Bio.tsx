@@ -44,18 +44,22 @@ export const Bio = () => {
           <div className={styles.positions}>
             {positions.map(({ role, affiliation, affiliationIcon }) => (
               <div key={`${role}-${affiliation}`} className={styles.position}>
-                {affiliationIcon && (
+                {affiliationIcon ? (
                   <img
                     className={styles.affiliationIcon}
                     src={affiliationIcon}
                     alt=''
                   />
+                ) : (
+                  <span />
                 )}
-                <span className={styles.positionText}>
-                  <span className={styles.positionRole}>{role}</span>
-                  <span className={styles.positionSep}>·</span>
-                  {affiliation}
+                <span className={`${styles.positionText} ${styles.positionRole}`}>
+                  {role}
                 </span>
+                <span className={`${styles.positionText} ${styles.positionSep}`}>
+                  ·
+                </span>
+                <span className={styles.positionText}>{affiliation}</span>
               </div>
             ))}
           </div>
