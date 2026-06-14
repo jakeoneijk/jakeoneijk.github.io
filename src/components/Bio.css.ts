@@ -101,7 +101,6 @@ export const positionSep = style({
 export const affiliationIcon = style({
   width: '28px',
   height: '28px',
-  // Keep each logo's aspect ratio inside the fixed 32×32 box (no stretching).
   objectFit: 'contain',
   flexShrink: 0,
 })
