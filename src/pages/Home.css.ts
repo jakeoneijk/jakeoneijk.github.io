@@ -79,9 +79,9 @@ export const interestIcon = style({
 // description text (mirrors the Bio's affiliation marks).
 export const inlineLogo = style({
   display: 'inline-block',
-  width: '1.05em',
-  height: '1.05em',
+  width: '1.5em',
+  height: '1.5em',
   objectFit: 'contain',
-  verticalAlign: '-0.15em',
-  marginRight: '0.25em',
+  verticalAlign: '-0.35em',
+  marginRight: '0.3em',
 })
