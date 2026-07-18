@@ -4,6 +4,7 @@ import { LuAudioLines, LuDog, LuLayers, LuMusic, LuSpeech } from 'react-icons/lu
 
 import { Text } from '@/components/Text'
 import {
+  bio,
   descriptionEntities,
   notice,
   researchInterests,
@@ -41,6 +42,15 @@ const InlineEntity = ({ label, imgSrc, href }: Entity) => {
   )
 }
 
+// Splits the bio on `{key}` tokens, rendering each known key as an InlineEntity
+// and leaving the surrounding prose as plain text. Unknown keys are left as-is.
+const renderBio = (text: string) =>
+  text.split(/\{(\w+)\}/).map((part, index) => {
+    if (index % 2 === 0) return part
+    const entity = descriptionEntities[part as keyof typeof descriptionEntities]
+    return entity ? <InlineEntity key={index} {...entity} /> : `{${part}}`
+  })
+
 export const Home = () => {
   return (
     <div className={styles.container}>
@@ -65,21 +75,7 @@ export const Home = () => {
         </div>
       </div>
       <div className={styles.textContainer}>
-        <Text variant='description'>
-          I am a final-year Ph.D. candidate at{' '}
-          <InlineEntity {...descriptionEntities.kaist} /> (
-          <InlineEntity {...descriptionEntities.macLab} />) advised by
-          Professor{' '}
-          <InlineEntity {...descriptionEntities.juhan} />, and currently a
-          Research Intern at{' '}
-          <InlineEntity {...descriptionEntities.nvidia} />. My research focuses
-          on deep generative models for audio and music, including diffusion,
-          flow matching, and autoregressive methods, with an emphasis on high
-          perceptual quality in real-world applications. Previously, I
-          co-founded{' '}
-          <InlineEntity {...descriptionEntities.audai} />, where I contributed
-          to VOX Factory, an online singing voice synthesizer.
-        </Text>
+        <Text variant='description'>{renderBio(bio)}</Text>
       </div>
     </div>
   )

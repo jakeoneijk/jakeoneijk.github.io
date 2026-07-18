@@ -53,6 +53,19 @@ export const descriptionEntities = {
   },
 } satisfies Record<string, Entity>
 
+/**
+ * The Home intro. `{key}` tokens are replaced with the matching
+ * `descriptionEntities` entry (logo + name + link) when rendered.
+ */
+export const bio =
+  'I am a final-year Ph.D. candidate at {kaist} ({macLab}) advised by ' +
+  'Professor {juhan}, and currently a Research Intern at {nvidia}. My ' +
+  'research focuses on deep generative models for audio and music, including ' +
+  'diffusion, flow matching, and autoregressive methods, with an emphasis on ' +
+  'high perceptual quality in real-world applications. Previously, I ' +
+  'co-founded {audai}, where I contributed to VOX Factory, an online singing ' +
+  'voice synthesizer.'
+
 export type Position = {
   role: string
   institution: Entity
