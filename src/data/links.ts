@@ -45,10 +45,3 @@ export const socialLinks: SocialLink[] = [
     href: 'https://www.youtube.com/channel/UCR5ICei5K6hmbzeWNz9JHuA',
   },
 ]
-
-export const profileLinks = {
-  macLab: 'https://mac.kaist.ac.kr/',
-  juhan: 'https://mac.kaist.ac.kr/~juhan/',
-  audAI: 'https://youtu.be/-CMKNlhh0WQ?si=YTlbZr7OsJhGnxH8',
-  music: 'https://www.youtube.com/channel/UCR5ICei5K6hmbzeWNz9JHuA',
-}

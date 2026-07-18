@@ -42,26 +42,50 @@ export const Bio = () => {
           />
           <span className={styles.tagline}>{profile.tagline}</span>
           <div className={styles.positions}>
-            {positions.map(({ role, affiliation, affiliationIcon }) => (
-              <div key={`${role}-${affiliation}`} className={styles.position}>
-                {affiliationIcon ? (
-                  <img
-                    className={styles.affiliationIcon}
-                    src={affiliationIcon}
-                    alt=''
-                  />
-                ) : (
-                  <span />
-                )}
-                <span className={`${styles.positionText} ${styles.positionRole}`}>
-                  {role}
-                </span>
-                <span className={`${styles.positionText} ${styles.positionSep}`}>
-                  ·
-                </span>
-                <span className={styles.positionText}>{affiliation}</span>
-              </div>
-            ))}
+            {positions.map(({ role, institution }) => {
+              const { label, imgSrc, href } = institution
+              const rowKey = `${role}-${label}`
+              const rowContent = (
+                <>
+                  {imgSrc ? (
+                    <img
+                      className={styles.affiliationIcon}
+                      src={imgSrc}
+                      alt=''
+                    />
+                  ) : (
+                    <span />
+                  )}
+                  <span
+                    className={`${styles.positionText} ${styles.positionRole}`}
+                  >
+                    {role}
+                  </span>
+                  <span
+                    className={`${styles.positionText} ${styles.positionSep}`}
+                  >
+                    ·
+                  </span>
+                  <span className={styles.positionText}>{label}</span>
+                </>
+              )
+
+              return href ? (
+                <a
+                  key={rowKey}
+                  className={styles.positionLink}
+                  href={href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  {rowContent}
+                </a>
+              ) : (
+                <div key={rowKey} className={styles.position}>
+                  {rowContent}
+                </div>
+              )
+            })}
           </div>
         </div>
         <div className={styles.socialList}>

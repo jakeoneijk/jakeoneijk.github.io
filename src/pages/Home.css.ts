@@ -74,3 +74,14 @@ export const interestIcon = style({
   fontSize: '1.05em',
   color: color.textMuted,
 })
+
+// Small institution logo shown inline right before an affiliation name in the
+// description text (mirrors the Bio's affiliation marks).
+export const inlineLogo = style({
+  display: 'inline-block',
+  width: '1.05em',
+  height: '1.05em',
+  objectFit: 'contain',
+  verticalAlign: '-0.15em',
+  marginRight: '0.25em',
+})

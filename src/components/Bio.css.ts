@@ -98,6 +98,16 @@ export const positionSep = style({
   color: color.textMuted,
 })
 
+// Makes an entire position row (logo + role + affiliation) clickable without
+// changing its appearance. `display: contents` keeps the cells aligned in the
+// shared grid columns, and `cursor` inherits down to the row's children.
+export const positionLink = style({
+  display: 'contents',
+  cursor: 'pointer',
+  color: 'inherit',
+  textDecoration: 'none',
+})
+
 export const affiliationIcon = style({
   width: '28px',
   height: '28px',
