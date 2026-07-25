@@ -34,6 +34,7 @@ export const projects: Record<ProjectCategory, Project[]> = {
       author: 'Jaekwon Im, Juhan Nam',
       note: 'Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2026',
       link: 'https://jakeoneijk.github.io/saga-sr-project/',
+      embLink: 'https://www.youtube.com/embed/S2oksiNx7bc?si=kqVWD5yVhRMIGQJq',
       bulletPoints: [
         'A versatile audio super-resolution model that upsamples music, speech, and sound effects from 4–32kHz to 44.1kHz.',
         'Combines text and spectral roll-off embeddings for robust and semantically aligned reconstruction.',
