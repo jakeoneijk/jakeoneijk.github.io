@@ -21,6 +21,15 @@ export const textContainer = style({
   marginTop: `calc(${size.spacing.s} + ${size.spacing.l})`,
 })
 
+export const paragraph = style({
+  margin: 0,
+  selectors: {
+    '& + &': {
+      marginTop: size.spacing.ml,
+    },
+  },
+})
+
 export const notice = style({
   width: size.section.bodyWidth,
   maxWidth: '100%',

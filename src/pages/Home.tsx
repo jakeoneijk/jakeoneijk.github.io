@@ -1,6 +1,12 @@
 import { Fragment } from 'react'
 import type { IconType } from 'react-icons'
-import { LuAudioLines, LuDog, LuLayers, LuMusic, LuSpeech } from 'react-icons/lu'
+import {
+  LuAudioLines,
+  LuDog,
+  LuLayers,
+  LuMusic,
+  LuSpeech,
+} from 'react-icons/lu'
 
 import { Text } from '@/components/Text'
 import {
@@ -21,8 +27,7 @@ const interestIcons: Record<InterestIcon, IconType> = {
   multimodal: LuLayers,
 }
 
-// Renders an inline entity: a leading logo when `imgSrc` is set, wrapped in a
-// link when `href` is set.
+// An entity inline in the prose: logo when `imgSrc`, linked when `href`.
 const InlineEntity = ({ label, imgSrc, href }: Entity) => {
   const body = (
     <>
@@ -42,14 +47,19 @@ const InlineEntity = ({ label, imgSrc, href }: Entity) => {
   )
 }
 
-// Splits the bio on `{key}` tokens, rendering each known key as an InlineEntity
-// and leaving the surrounding prose as plain text. Unknown keys are left as-is.
-const renderBio = (text: string) =>
+// Swaps each known `{key}` for its entity; unknown keys stay as plain text.
+const renderParagraph = (text: string) =>
   text.split(/\{(\w+)\}/).map((part, index) => {
     if (index % 2 === 0) return part
     const entity = descriptionEntities[part as keyof typeof descriptionEntities]
     return entity ? <InlineEntity key={index} {...entity} /> : `{${part}}`
   })
+
+// Blank lines split paragraphs; single line breaks are just source wrapping.
+const bioParagraphs = bio
+  .trim()
+  .split(/\n\s*\n/)
+  .map((paragraph) => paragraph.replace(/\s*\n\s*/g, ' '))
 
 export const Home = () => {
   return (
@@ -65,7 +75,9 @@ export const Home = () => {
                 const Icon = token.icon ? interestIcons[token.icon] : null
                 return (
                   <Fragment key={tokenIndex}>
-                    {Icon && <Icon className={styles.interestIcon} aria-hidden />}
+                    {Icon && (
+                      <Icon className={styles.interestIcon} aria-hidden />
+                    )}
                     {token.text}
                   </Fragment>
                 )
@@ -75,7 +87,11 @@ export const Home = () => {
         </div>
       </div>
       <div className={styles.textContainer}>
-        <Text variant='description'>{renderBio(bio)}</Text>
+        {bioParagraphs.map((paragraph, index) => (
+          <p key={index} className={styles.paragraph}>
+            <Text variant='description'>{renderParagraph(paragraph)}</Text>
+          </p>
+        ))}
       </div>
     </div>
   )
