@@ -43,7 +43,7 @@ export const Bio = () => {
           <span className={styles.tagline}>{profile.tagline}</span>
           <div className={styles.positions}>
             {positions.map(({ role, institution }) => {
-              const { label, imgSrc, href } = institution
+              const { label, imgSrc, href, location } = institution
               const rowKey = `${role}-${label}`
               const rowContent = (
                 <>
@@ -67,6 +67,9 @@ export const Bio = () => {
                     ·
                   </span>
                   <span className={styles.positionText}>{label}</span>
+                  {location && (
+                    <span className={styles.positionLocation}>{location}</span>
+                  )}
                 </>
               )
 

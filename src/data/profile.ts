@@ -13,6 +13,7 @@ export type Entity = {
   label: string
   imgSrc?: string
   href?: string
+  location?: string
 }
 
 /**
@@ -20,10 +21,17 @@ export type Entity = {
  * and `descriptionEntities` (Home) so a label, logo, or link is defined once.
  */
 export const institutions = {
+  spotify: {
+    label: 'Spotify',
+    imgSrc: '/icons/institution/spotify.png',
+    href: 'https://spotify.com/',
+    location: 'New York, United States',
+  },
   kaist: {
     label: 'KAIST',
     imgSrc: '/icons/institution/kaist.png',
     href: 'https://kaist.ac.kr/en/',
+    location: 'Daejeon, South Korea',
   },
   nvidia: {
     label: 'NVIDIA',
@@ -70,7 +78,7 @@ export type Position = {
 /** List as many roles/affiliations as needed; each renders as its own block. */
 export const positions: Position[] = [
   { role: 'PhD Candidate', institution: institutions.kaist },
-  { role: 'Research Intern', institution: institutions.nvidia },
+  { role: 'Research Scientist', institution: institutions.spotify },
 ]
 
 /** Toggle `show` to display an announcement banner on the Home page. */
