@@ -63,11 +63,10 @@ export const descriptionEntities = {
 
 /** The Home intro; `{key}` renders the matching `descriptionEntities` entry. */
 export const bio = `
-I am a final-year Ph.D. candidate at {kaist} ({macLab}) advised by Professor {juhan}, and currently a Research Intern at {nvidia}.
-
-My research focuses on deep generative models for audio and music, including diffusion, flow matching, and autoregressive methods, with an emphasis on high perceptual quality in real-world applications.
-
-Previously, I co-founded {audai}, where I contributed to VOX Factory, an online singing voice synthesizer.
+I am a final-year Ph.D. candidate in the {macLab} at {kaist}, advised by Professor {juhan}.
+My research focuses on deep generative models for audio, including diffusion, flow matching, and autoregressive methods, with an emphasis on high perceptual quality in real-world applications.
+During my Ph.D., I was a research intern at {nvidia}, where I worked on a spoken dialogue language model.
+Prior to that, I co-founded {audai}, where I contributed to VOX Factory, an online singing voice synthesizer.
 `
 
 export type Position = {
@@ -78,7 +77,7 @@ export type Position = {
 /** List as many roles/affiliations as needed; each renders as its own block. */
 export const positions: Position[] = [
   { role: 'PhD Candidate', institution: institutions.kaist },
-  { role: 'Research Scientist', institution: institutions.spotify },
+  //{ role: 'Research Scientist', institution: institutions.spotify },
 ]
 
 /** Toggle `show` to display an announcement banner on the Home page. */
